@@ -1,0 +1,83 @@
+// app global css in SCSS form
+
+/*
+@font-face {
+  font-family: GreatVibes;
+  src: url(./assets/fonts/GreatVibes-Regular.ttf);
+}
+*/
+
+//COMMONS
+body {background: #5e5e5e;}
+a {text-decoration: none; color: black}
+.clickeable:hover {cursor:pointer}
+.q-btn {width:180px; margin:8px}
+.q-card {border-radius: 0;}
+//END COMMONS
+
+//PAGE
+.titleEdit {
+  text-align: center;
+  width: 100%;
+  min-height: 40px;
+  padding: 12px 0;
+  color: white;
+  background: $primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titleEdit .titleCentered {position: absolute; width: 100%}
+.titleEdit i {font-size: 22px; margin-right: 6px;}
+
+.page {max-width:1200px; margin:auto; padding-bottom:24px}
+.q-form {max-width:600px; margin:auto; padding:20px}
+
+.uploadFileWrapper {
+  margin: 16px auto;
+  max-width: 516px;
+}
+.submit {margin: 30px 0 10px 0; min-width: 140px;}
+//END PAGE
+
+.commentsWrapper div {border-radius: 12px; padding: 10px; color: white; margin-bottom: 10px}
+.commentsWrapper div p{margin-bottom:0}
+
+//DASHBOARD FILES
+.wrapperFile {width:100%; max-width: 400px; margin:16px;}
+// .wrapperFile.list {width: 100%; max-width: 800px; margin:20px; display:flex; justify-content: space-between; align-items: center; flex-wrap:wrap}
+.wrapperFile .image .img {width:100%; height: 320px;}
+
+div.text {min-height: 60px}
+//END DASHBOARD FILES
+
+.actions {margin: 6px 0 6px 0; text-align: center;}
+small.actions {font-size:12px; display:block; text-align:center; text-decoration: underline;cursor: pointer; margin-bottom: 10px}
+small.actions:last-child{margin-bottom:0}
+
+/*SPINNER*/
+.spinnerWrapper {
+  // position: absolute;
+  background: rgba(0,0,0,0.85);
+  width: 100%;
+  height: 100%;
+  z-index:99999;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top:0
+}
+
+.q-item__section--avatar {
+  min-width: auto;
+}
+
+.link {cursor: pointer;}
+.link:hover {text-decoration: underline;}
+
+@media screen and (max-width: 500px) {
+  .flexButtons {flex-wrap: nowrap; margin-bottom: 8px}
+  .flexButtons button {width:auto}
+}// app global css in SCSS form
