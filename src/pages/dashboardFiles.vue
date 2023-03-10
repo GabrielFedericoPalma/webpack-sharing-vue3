@@ -5,10 +5,10 @@
       <div class="titleEdit bg-primary" >
         <div class="cursor-pointer q-px-lg z-top" @click="goToFolders()"  v-if="login_store.isLogged" >
           <q-icon name="arrow_back" />
-          <span>folders</span>
+          <!-- <span>folders</span> -->
         </div>
         <div class="titleCentered" >
-          <q-icon name="folder_open" /><span class="text-bold" >{{store.folder_name}}</span>
+          <span class="text-uppercase" >{{store.folder_name}}</span>
         </div>
         <div class="cursor-pointer q-px-lg z-top" title="Share folder" @click="share()" v-show="login_store.isLogged" >
           <q-icon name="share" />

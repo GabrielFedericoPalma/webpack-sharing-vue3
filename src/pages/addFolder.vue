@@ -5,7 +5,6 @@
       <div class="titleEdit bg-primary">
         <div class="cursor-pointer q-px-lg z-top" @click="goToFolders()" >
           <q-icon name="arrow_back" />
-          <span>folders</span>
         </div>
         <div class="titleCentered" >
           <q-icon name="create_new_folder" /><span>Create folder</span>

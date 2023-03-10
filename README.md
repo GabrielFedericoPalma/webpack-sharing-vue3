@@ -1,6 +1,6 @@
 # I am Sharing (sharing)
 
-Sharing files under profiles
+Share files under profiles
 
 ## Install the dependencies
 ```bash

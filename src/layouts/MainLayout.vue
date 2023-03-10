@@ -29,7 +29,7 @@
   <!-- **** END HEADER **** -->
 
   <!-- ***** MENU LATERAL ***** -->
-  <q-drawer v-model="drawer" show-if-above bordered class="bg-grey-1">
+  <q-drawer v-model="drawer" show-if-above bordered class="bg-grey-1" >
 
     <q-icon name="navigate_before" @click="drawer = !drawer" style="font-size: 20px; position:absolute; right:6px; top:6px;z-index: 1" class="clickeable" />
 
@@ -88,7 +88,7 @@
             <q-item-section>
               <q-item-label>Logout</q-item-label>
             </q-item-section>
-            <small>v 1.1.5</small>
+            <small>v 1.1.6</small>
           </q-item>
         </a>
         <!-- END LOGOUT -->
@@ -102,7 +102,7 @@
             <q-item-section>
               <q-item-label>Login</q-item-label>
             </q-item-section>
-            <small>v 1.1.3</small>
+            <small>v 1.1.6</small>
           </q-item>
         </router-link>
         <!-- END LOGIN -->
@@ -174,7 +174,14 @@
   font-family: GreatVibes;
   src: url(../assets/fonts/GreatVibes-Regular.ttf);
 }
+
 .mainText {margin: auto; width: 50%;}
 h1{font-family: 'GreatVibes', Arial;font-size:33px; line-height:1; margin: 3px auto 6px auto; letter-spacing: 2px; text-align: center;}
 h2{font-size:12px; letter-spacing: 2px; margin: 0; line-height: 1; text-align: center; }
+
+
+@media screen and (max-width: 500px) {
+  h1 {font-size:26px}
+}
+
 </style>

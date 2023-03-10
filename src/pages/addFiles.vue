@@ -16,9 +16,8 @@
 
       <q-form @submit="addFile" >
 
-        <p class="text-center" >Add files in {{store.folder_name}}</p>
-
        <q-card-section>
+        <p class="q-mb-lg" >Folder: {{store.folder_name}}</p>
         <div class="uploadFileWrapper">
           <div>
             <p>Upload File</p>
@@ -32,7 +31,7 @@
         </div>
         </q-card-section>
 
-        <q-card-section>
+        <q-card-section class="q-mt-none" >
         <div style="max-width: 300px;">
         <p>Additional note</p>
           <q-input

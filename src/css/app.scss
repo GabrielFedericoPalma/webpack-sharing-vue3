@@ -15,6 +15,9 @@ a {text-decoration: none; color: black}
 .q-card {border-radius: 0;}
 //END COMMONS
 
+/* Drawer */
+aside {z-index:99999 !important}
+
 //PAGE
 .titleEdit {
   text-align: center;
@@ -34,7 +37,7 @@ a {text-decoration: none; color: black}
 .q-form {max-width:600px; margin:auto; padding:20px}
 
 .uploadFileWrapper {
-  margin: 16px auto;
+  margin: 16px auto 6px auto;
   max-width: 516px;
 }
 .submit {margin: 30px 0 10px 0; min-width: 140px;}
