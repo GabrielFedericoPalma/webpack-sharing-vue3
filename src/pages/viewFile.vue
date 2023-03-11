@@ -8,7 +8,7 @@
         <span>folder</span>
       </div>
       <div class="q-mx-auto titleCentered" >
-        <q-icon name="article" /><span>FILE</span>
+        <q-icon name="article" /><span>File</span>
       </div>
       <div class="cursor-pointer q-px-lg z-top" title="Share file" @click="share()" v-if="login_store.isLogged" >
         <q-icon name="share" />

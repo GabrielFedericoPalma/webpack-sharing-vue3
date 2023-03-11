@@ -5,7 +5,6 @@
       <div class="titleEdit bg-primary">
         <div class="cursor-pointer q-px-lg z-top" @click="goToProfiles()" >
           <q-icon name="arrow_back" />
-          <span>profiles</span>
         </div>
         <div class="titleCentered">
           <q-icon name="add_circle" /><span>Create profile</span>
@@ -49,7 +48,8 @@
                   :disabled="!store.conf_team.team_name"
                 />
               </div>
-              <img :src="uploadedFile" style="max-width: 120px; padding: 16px 0" />
+              <img :src="uploadedFile" style="max-width: 120px; padding: 16px 0" v-if="uploadedFile" />
+              <img :src="store.conf_team.team_icon" style="max-width: 120px; padding: 16px 0" v-if="!uploadedFile" />
             </div>
         </q-card-section>
 

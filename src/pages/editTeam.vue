@@ -5,10 +5,9 @@
       <div class="titleEdit bg-primary">
         <div class="cursor-pointer q-px-lg z-top" @click="$router.back()"  v-show="login_store.isLogged" >
           <q-icon name="arrow_back" />
-          <span>profiles</span>
         </div>
         <div class="titleCentered" >
-          <span>Edit profile</span>
+          <q-icon name="edit" /><span>Edit profile</span>
         </div>
       </div>
 
