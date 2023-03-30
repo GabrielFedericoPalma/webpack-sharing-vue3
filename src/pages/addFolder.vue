@@ -184,8 +184,8 @@ export default {
       // CREA UN REGISTRO EN DB FOLDER_NAME
       if(objFolderSet){
         try {
-          await setDoc(doc(db, self.url_team, self.folder_name), objFolderSet);
-          self.$router.push('/'+self.url_team+'/'+self.folder_name)
+          await setDoc(doc(db, self.url_team, self.textToGuion(self.folder_name)), objFolderSet);
+          self.$router.push('/'+self.url_team+'/'+self.textToGuion(self.folder_name))
         } catch (error) {
           self.store.showNotifyFailled(error)
         }

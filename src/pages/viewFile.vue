@@ -41,7 +41,7 @@
 
       <!-- IS VIDEO -->
       <div v-if="isVideo(store.viewFile.fileType)" >
-          <video width="100%" height="100%" controls >
+          <video controls >
             <source :src="store.viewFile.url" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -193,3 +193,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+video {width: 100%; max-width: 600px;}
+</style>

@@ -8,7 +8,7 @@
           <!-- <span>folders</span> -->
         </div>
         <div class="titleCentered" >
-          <span class="text-uppercase" >{{store.folder_name}}</span>
+          <q-icon name="folder" /><span class="text-uppercase" >{{store.folder_name}}</span>
         </div>
         <div class="cursor-pointer q-px-lg z-top" title="Share folder" @click="share()" v-show="login_store.isLogged" >
           <q-icon name="share" />
@@ -38,8 +38,8 @@
           -->
 
           <!-- IS VIDEO -->
-          <div v-if="isVideo(item.fileType)" >
-              <video width="100%" height="100%" controls>
+          <div v-if="isVideo(item.fileType)" class="videoContainer" >
+              <video controls>
                 <source :src="item.url" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
