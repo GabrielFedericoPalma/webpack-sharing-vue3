@@ -20,10 +20,12 @@
 
       <div
         v-for="(item, index, key) in store.firestoreFolderNameData"
-        :key="item.$key" >
+        :key="item.$key" :class="{displayNone: item.fileName === 'base.png'}" >
 
           <!-- IS IMG -->
           <div v-if="isImg(item.fileType)" class="file" >
+            <!-- <p>{{ item.orden }}</p>
+            <p>{{ item.id }}</p> -->
             <h4 v-show="item.title_name" >{{ item.title_name }}</h4>
             <div class="img" style="background-size:cover; background-position: center;" v-bind:style="{backgroundImage:'url('+item.url+')'}" ></div>
           </div>
@@ -51,8 +53,9 @@
             <q-icon name="task" color="secondary" style="font-size: 200px;" ></q-icon>
           </div>
 
-          <p class="text-bold actions" >{{item.fileName}}</p>
-          <small @click="showFile(item.id)" class="actions" >Details</small>
+          <p class="text-bold actions" v-show="item.fileName !== 'base.png'" >{{item.fileName}}</p>
+          <small @click="showFile(item.id)" class="actions" v-show="item.fileName !== 'base.png'" >Details</small>
+
 
     </div>
 
@@ -147,4 +150,9 @@ export default {
 <style>
 .q-dialog {background: #5d6e60e6;}
 .q-dialog .q-btn {width:auto}
+
+@media screen and (max-width: 1000px) {
+  .displayNone{display: none !important}
+}
+
 </style>
