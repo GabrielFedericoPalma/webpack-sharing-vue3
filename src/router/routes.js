@@ -12,6 +12,7 @@ const routes = [
       { path: ':team/editTeam', component: () => import('src/pages/editTeam.vue') },
       { path: ':team/folders', component: () => import('src/pages/folders.vue') },
       { path: ':team/:id/addFiles', component: () => import('src/pages/addFiles.vue') },
+      { path: ':team/:id/addTitle', component: () => import('src/pages/addTitle.vue') },
       { path: ':team/:id', component: () => import('pages/dashboardFiles.vue'), meta: {public:true} },
       { path: ':team/:id/file/:img', component: () => import('pages/viewFile.vue'), meta: {public:true} },
       // { path: ':team/:id/file/:img/editFile', component: () => import('pages/editFile.vue') },

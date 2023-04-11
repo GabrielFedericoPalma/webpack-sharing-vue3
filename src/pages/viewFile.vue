@@ -195,5 +195,5 @@ export default {
 </script>
 
 <style scoped>
-video {width: 100%; max-width: 600px;}
+video, .image {width: 100%; max-width: 600px;}
 </style>

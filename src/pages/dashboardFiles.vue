@@ -16,14 +16,15 @@
         </div>
       </div>
 
-    <q-card-section class="row justify-center" >
+    <q-card-section class="wrapperFile" >
 
-      <div class="wrapperFile"
+      <div
         v-for="(item, index, key) in store.firestoreFolderNameData"
         :key="item.$key" >
 
           <!-- IS IMG -->
-          <div v-if="isImg(item.fileType)" style="height: 320px" class="image" >
+          <div v-if="isImg(item.fileType)" class="file" >
+            <h4 v-show="item.title_name" >{{ item.title_name }}</h4>
             <div class="img" style="background-size:cover; background-position: center;" v-bind:style="{backgroundImage:'url('+item.url+')'}" ></div>
           </div>
 
@@ -57,9 +58,11 @@
 
   </q-card-section>
 
-    <q-card-section class="column items-center justify-center q-pt-sm q-pb-lg" >
-      <!-- <em v-if="!store.firestoreFolderNameData.length" class="q-pb-md" >{{message}}</em> -->
-      <router-link :to="'/'+$route.params.team+'/'+store.folder_name+'/addFiles'" v-if="login_store.isLogged" >
+    <q-card-section class="column items-center justify-center q-pt-sm q-pb-lg" v-show="login_store.isLogged" >
+      <router-link :to="'/'+$route.params.team+'/'+store.folder_name+'/addTitle'"  >
+        <q-btn icon="cloud_upload" label="Add title" color="secondary" />
+      </router-link>
+      <router-link :to="'/'+$route.params.team+'/'+store.folder_name+'/addFiles'"  >
         <q-btn icon="cloud_upload" label="Add files" color="accent" />
       </router-link>
     </q-card-section>

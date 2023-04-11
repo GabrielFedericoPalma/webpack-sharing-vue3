@@ -33,7 +33,7 @@ aside {z-index:99999 !important}
 .titleEdit .titleCentered {position: absolute; width: 100%}
 .titleEdit i {font-size: 22px; margin-right: 6px;}
 
-.page {max-width:1200px; margin:auto; padding-bottom:24px}
+.page {max-width:1200px; margin:auto; padding-bottom:24px;}
 .q-form {max-width:600px; margin:auto; padding:20px}
 
 .uploadFileWrapper {
@@ -47,9 +47,18 @@ aside {z-index:99999 !important}
 .commentsWrapper div p{margin-bottom:0}
 
 //DASHBOARD FILES
-.wrapperFile {width:100%; max-width: 400px; margin:16px;}
-// .wrapperFile.list {width: 100%; max-width: 800px; margin:20px; display:flex; justify-content: space-between; align-items: center; flex-wrap:wrap}
-.wrapperFile .image .img {width:100%; height: 320px;}
+.wrapperFile {text-align: center;}
+.wrapperFile h4 {text-align: left; margin: 0 0 0 10px; font-size: 24px;}
+
+.wrapperFile div{margin:10px; display: inline-block;}
+.wrapperFile div div{display: inline-block;}
+.wrapperFile .file {width: 450px; height: 380px;}
+.wrapperFile .file .img {width:100%; height: 100%;}
+
+.wrapperFile .videoContainer {
+  max-width: 450px;
+  height: 100%;
+}
 
 .wrapperFile .videoContainer video{
   width: 100%;
@@ -57,6 +66,15 @@ aside {z-index:99999 !important}
 }
 
 div.text {min-height: 60px}
+
+@media screen and (max-width: 500px) {
+  .wrapperFile .file {width: 370px; height: 320px;}
+}
+
+@media screen and (max-width: 400px) {
+  .wrapperFile .file {width: 300px; height: 250px;}
+}
+
 //END DASHBOARD FILES
 
 .actions {margin: 6px 0 6px 0; text-align: center;}

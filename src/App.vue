@@ -18,7 +18,9 @@ import { firebase_db_store } from './stores/firebase_db_store';
 
 export default defineComponent({
   name: 'App',
-  created(){},
+  created(){
+
+  },
   data() {
     return {
       store: firebase_db_store()

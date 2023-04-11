@@ -29,7 +29,7 @@
   <!-- **** END HEADER **** -->
 
   <!-- ***** MENU LATERAL ***** -->
-  <q-drawer v-model="drawer" show-if-above bordered class="bg-grey-1" >
+  <q-drawer v-model="drawer" bordered class="bg-grey-1" >
 
     <q-icon name="navigate_before" @click="drawer = !drawer" style="font-size: 20px; position:absolute; right:6px; top:6px;z-index: 1" class="clickeable" />
 
@@ -88,7 +88,7 @@
             <q-item-section>
               <q-item-label>Logout</q-item-label>
             </q-item-section>
-            <small>v 1.1.6</small>
+            <small>v 1.1.7</small>
           </q-item>
         </a>
         <!-- END LOGOUT -->
@@ -102,7 +102,7 @@
             <q-item-section>
               <q-item-label>Login</q-item-label>
             </q-item-section>
-            <small>v 1.1.6</small>
+            <small>v 1.1.7</small>
           </q-item>
         </router-link>
         <!-- END LOGIN -->
@@ -139,6 +139,12 @@
       }
     },
     created(){
+
+      if(this.isLogged){
+        this.drawer = true
+      }else{
+        this.drawer = false
+      }
 
         const urlTeam = this.$route.params.team
 
