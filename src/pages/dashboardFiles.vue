@@ -24,8 +24,8 @@
 
           <!-- IS IMG -->
           <div v-if="isImg(item.fileType)" class="file" >
-            <!-- <p>{{ item.orden }}</p>
-            <p>{{ item.id }}</p> -->
+            <!-- <p>{{ item.orden }}</p> -->
+            <!-- <p>{{ item.id }}</p> -->
             <h4 v-show="item.title_name" >{{ item.title_name }}</h4>
             <div class="img" style="background-size:cover; background-position: center;" v-bind:style="{backgroundImage:'url('+item.url+')'}" ></div>
           </div>
@@ -42,6 +42,7 @@
 
           <!-- IS VIDEO -->
           <div v-if="isVideo(item.fileType)" class="videoContainer" >
+              <h5 class="q-mb-lg q-mt-none text-left" v-show="item.title_name" >{{ item.title_name }}</h5>
               <video controls>
                 <source :src="item.url" type="video/mp4">
                 Your browser does not support the video tag.

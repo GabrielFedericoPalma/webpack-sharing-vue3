@@ -1,16 +1,17 @@
 <template>
-  <q-layout view="lHh Lpr lFf" >
+  <q-layout view="lHh Lpr lFf">
 
   <!-- **** HEADER **** -->
-  <q-header elevated reveal class="q-py-md bg-primary row justify-between items-center" style="z-index:9999" >
+  <q-header elevated reveal
+  :style="[store.conf_team.bgImage ? {backgroundImage:'url('+store.conf_team.bgImage+')'}:{}]"
+  style="z-index:9999" >
 
+  <div class="q-py-md row justify-between items-center" style="background-color: rgba(0, 0, 0, 0.35);" >
+    <q-toolbar style="width: 30px; z-index:1">
+      <q-btn flat dense round icon="menu" aria-label="Menu" @click="drawer = !drawer" style="font-size: 19px" />
+    </q-toolbar>
 
-      <q-toolbar style="width: 30px; z-index:1">
-        <q-btn flat dense round icon="menu" aria-label="Menu" @click="drawer = !drawer" style="font-size: 19px" />
-      </q-toolbar>
-
-
-    <div style="position: absolute; width: 100%" >
+    <div style="position: absolute; width: 100%;" >
       <div class="mainText" >
         <h1>
           {{store.conf_team.team_name}}
@@ -21,9 +22,11 @@
       </div>
     </div>
 
-    <div class="q-px-md" >
-      <img :src="conf_team.team_icon" alt="" style="width:70px; border-radius: 50%" >
+    <div class="q-pa-md q-mr-md"
+      :style="[store.conf_team.team_icon ? {backgroundImage:'url('+store.conf_team.team_icon+')'}:{}]"
+      style="width:70px; height: 70px; border-radius: 50%; background-position: center; background-size: cover;" >
     </div>
+  </div>
 
   </q-header>
   <!-- **** END HEADER **** -->
@@ -182,8 +185,8 @@
 }
 
 .mainText {margin: auto; width: 50%;}
-h1{font-family: 'GreatVibes', Arial;font-size:33px; line-height:1; margin: 3px auto 6px auto; letter-spacing: 2px; text-align: center;}
-h2{font-size:12px; letter-spacing: 2px; margin: 0; line-height: 1; text-align: center; }
+h1{font-family: 'GreatVibes', Arial;font-size:33px; line-height:1; margin: 3px auto 6px auto; letter-spacing: 2px; text-align: center; text-shadow: 1px 2px 6px black}
+h2{font-size:12px; letter-spacing: 2px; margin: 0; line-height: 1; text-align: center; text-shadow: 1px 2px 6px black}
 
 
 @media screen and (max-width: 500px) {
