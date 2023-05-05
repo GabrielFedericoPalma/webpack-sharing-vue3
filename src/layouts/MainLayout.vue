@@ -184,9 +184,10 @@
   src: url(../assets/fonts/GreatVibes-Regular.ttf);
 }
 
-.mainText {margin: auto; width: 50%;}
-h1{font-family: 'GreatVibes', Arial;font-size:33px; line-height:1; margin: 3px auto 6px auto; letter-spacing: 2px; text-align: center; text-shadow: 1px 2px 6px black}
-h2{font-size:12px; letter-spacing: 2px; margin: 0; line-height: 1; text-align: center; text-shadow: 1px 2px 6px black}
+.mainText {margin: auto; width: fit-content;}
+h1, h2 {background: #0000005e; width: fit-content; padding: 8px 12px; margin: auto; border-radius: 8px}
+h1{font-family: 'GreatVibes', Arial;font-size:33px; line-height:1; letter-spacing: 2px; text-align: center; text-shadow: 1px 2px 6px black}
+h2{font-size:12px; letter-spacing: 2px; line-height: 1; text-align: center; text-shadow: 1px 2px 6px black}
 
 
 @media screen and (max-width: 500px) {
