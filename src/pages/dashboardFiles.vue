@@ -54,9 +54,12 @@
             <q-icon name="task" color="secondary" style="font-size: 200px;" ></q-icon>
           </div>
 
-          <p class="text-bold actions" v-show="item.fileName !== 'base.png'" >{{item.fileName}}</p>
-          <small @click="showFile(item.id)" class="actions" v-show="item.fileName !== 'base.png'" >Details</small>
+          <!-- Base.png es para tener 2 columnas en desktop cdo hay un sólo ítem en la fila -->
+          <p class="text-bold actions ellipsis" v-show="item.fileName !== 'base.png'" >{{item.fileName}}</p>
 
+          <p class="text-center ellipsis" v-show="item.additionalNote" >{{item.additionalNote}}</p>
+
+          <small @click="showFile(item.id)" class="actions" v-show="item.fileName !== 'base.png'" >More...</small>
 
     </div>
 
@@ -149,6 +152,9 @@ export default {
 </script>
 
 <style>
+
+p.ellipsis {text-align: center; max-width: 450px; margin: 5px auto}
+
 .q-dialog {background: #5d6e60e6;}
 .q-dialog .q-btn {width:auto}
 

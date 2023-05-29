@@ -57,7 +57,7 @@
   <q-card-section class="q-mb-none q-pb-none" >
     <p class="text-center" style="margin-bottom:8px" >Uploaded: <strong>{{dateParse(store.viewFile.fileDate)}}</strong></p>
     <p class="text-center" style="margin-bottom:8px" v-if="login_store.isLogged" >By: <em>{{store.viewFile.user}}</em></p>
-    <p class="text-center" v-show="store.viewFile.additionalNote" >{{store.viewFile.additionalNote}}&nbsp;</p>
+    <p class="text-center" v-show="store.viewFile.additionalNote" >{{store.viewFile.additionalNote}}</p>
   </q-card-section>
 
   <!-- COMMENTS -->
