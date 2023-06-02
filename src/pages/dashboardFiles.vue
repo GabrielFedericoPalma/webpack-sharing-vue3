@@ -43,7 +43,7 @@
 
           <!-- IS VIDEO -->
           <div v-if="isVideo(item.fileType)" class="videoContainer" >
-            <!-- <p>{{ item.id }}</p> -->
+              <!-- <p>{{ item.id }}</p> -->
               <h5 class="q-mb-lg q-mt-none text-left" v-show="item.title_name" >{{ item.title_name }}</h5>
               <video controls>
                 <source :src="item.url" type="video/mp4">
@@ -161,15 +161,21 @@ export default {
 p a {
   font-size: 13px;
   text-decoration: underline;
+  font-weight: 600;
+  color: blue;
 }
 
-p.ellipsis {text-align: center; max-width: 450px; margin: 5px auto}
+p.ellipsis {text-align: center; max-width: 350px; margin: 5px auto}
 
 .q-dialog {background: #5d6e60e6;}
 .q-dialog .q-btn {width:auto}
 
 @media screen and (max-width: 1000px) {
   .displayNone{display: none !important}
+}
+
+@media screen and (max-width: 500px) {
+  p.ellipsis {max-width: 248px;}
 }
 
 </style>
