@@ -27,7 +27,8 @@
             <!-- <p>{{ item.orden }}</p> -->
             <!-- <p>{{ item.id }}</p> -->
             <h4 v-show="item.title_name" >{{ item.title_name }}</h4>
-            <div class="img" style="background-size:cover; background-position: center;" v-bind:style="{backgroundImage:'url('+item.url+')'}" ></div>
+            <div class="img" style="background-size:cover; background-position: center;" v-bind:style="{backgroundImage:'url('+item.url+')'}" >
+            </div>
           </div>
 
           <!-- IS PDF
@@ -42,6 +43,7 @@
 
           <!-- IS VIDEO -->
           <div v-if="isVideo(item.fileType)" class="videoContainer" >
+            <!-- <p>{{ item.id }}</p> -->
               <h5 class="q-mb-lg q-mt-none text-left" v-show="item.title_name" >{{ item.title_name }}</h5>
               <video controls>
                 <source :src="item.url" type="video/mp4">
@@ -58,6 +60,10 @@
           <p class="text-bold actions ellipsis" v-show="item.fileName !== 'base.png'" >{{item.fileName}}</p>
 
           <p class="text-center ellipsis" v-show="item.additionalNote" >{{item.additionalNote}}</p>
+
+          <p class="text-center q-mb-none" v-show="item.link" >
+            <a :href="item.link" :title="item.link" target="_blank" >Link...</a>
+          </p>
 
           <small @click="showFile(item.id)" class="actions" v-show="item.fileName !== 'base.png'" >More...</small>
 
@@ -152,6 +158,10 @@ export default {
 </script>
 
 <style>
+p a {
+  font-size: 13px;
+  text-decoration: underline;
+}
 
 p.ellipsis {text-align: center; max-width: 450px; margin: 5px auto}
 
