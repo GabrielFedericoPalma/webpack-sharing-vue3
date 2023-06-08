@@ -73,6 +73,9 @@
     <a :href="store.viewFile.url" download target="_blank" >
       <small class="actions">Download</small>
     </a>
+    <a :href="store.viewFile.link" target="_blank" v-show="store.viewFile.link" >
+      <small class="actions">Link</small>
+    </a>
     <small class="actions" @click="alert('Edit file is commin soon')" v-show="login_store.isLogged && store.viewFile.uid == currentUser" >Edit file</small>
     <q-icon name="delete" @click="deleteDoc()" color="black" size="20px" title="Delete file" class="clickeable" v-show="login_store.isLogged && store.viewFile.uid == currentUser" />
   </div>
@@ -197,4 +200,17 @@ export default {
 
 <style scoped>
 video, .image {width: 100%; max-width: 600px;}
+
+.page {background: #464646a6;}
+
+h4, h5 {color: aliceblue}
+
+p, span {color: #ddd}
+
+small, p a {
+  color: #000;
+  letter-spacing: 1px;
+  font-size: 13px;
+  text-decoration: underline;
+}
 </style>

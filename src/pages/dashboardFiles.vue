@@ -20,7 +20,7 @@
 
       <div
         v-for="(item, index, key) in store.firestoreFolderNameData"
-        :key="item.$key" :class="{displayNone: item.fileName === 'base.png'}" >
+        :key="item.$key" :class="{base: item.fileName === 'base.png'}" >
 
           <!-- IS IMG -->
           <div v-if="isImg(item.fileType)" class="file" >
@@ -61,11 +61,11 @@
 
           <p class="text-center ellipsis" v-show="item.additionalNote" >{{item.additionalNote}}</p>
 
-          <p class="text-center q-mb-none" v-show="item.link" >
-            <a :href="item.link" :title="item.link" target="_blank" >Link...</a>
-          </p>
+          <small @click="showFile(item.id)" class="actions" v-show="item.fileName !== 'base.png'" >Details</small>
 
-          <small @click="showFile(item.id)" class="actions" v-show="item.fileName !== 'base.png'" >More...</small>
+          <p class="text-center q-mt-none " v-show="item.link" >
+            <a :href="item.link" :title="item.link" target="_blank" >Link</a>
+          </p>
 
     </div>
 
@@ -157,21 +157,30 @@ export default {
 }
 </script>
 
-<style>
-p a {
+<style scoped >
+
+.page {background: #464646a6;}
+
+h4, h5 {color: aliceblue}
+
+p, span {color: #ddd}
+
+small, p a {
+  color: #000;
+  letter-spacing: 1px;
   font-size: 13px;
   text-decoration: underline;
-  font-weight: 600;
-  color: blue;
 }
 
 p.ellipsis {text-align: center; max-width: 350px; margin: 5px auto}
-
+/*
 .q-dialog {background: #5d6e60e6;}
 .q-dialog .q-btn {width:auto}
+*/
+.base{opacity: 0 !important}
 
 @media screen and (max-width: 1000px) {
-  .displayNone{display: none !important}
+  .base{display: none !important}
 }
 
 @media screen and (max-width: 500px) {
