@@ -56,6 +56,7 @@
   </q-card-section>
 
   <q-card-section class="q-mb-none q-pb-none" >
+    <p class="text-center fileName" style="margin-bottom:8px" ><strong>{{store.viewFile.fileName}}</strong></p>
     <p class="text-center" style="margin-bottom:8px" >Uploaded: <strong>{{dateParse(store.viewFile.fileDate)}}</strong></p>
     <p class="text-center" style="margin-bottom:8px" v-if="login_store.isLogged" >By: <em>{{store.viewFile.user}}</em></p>
     <p class="text-center" v-show="store.viewFile.additionalNote" >{{store.viewFile.additionalNote}}</p>
@@ -208,9 +209,14 @@ h4, h5 {color: aliceblue}
 p, span {color: #ddd}
 
 small, p a {
-  color: #000;
+  color: aqua;
   letter-spacing: 1px;
   font-size: 13px;
   text-decoration: underline;
 }
+
+p.fileName {
+ font-size: 16px;
+}
+
 </style>

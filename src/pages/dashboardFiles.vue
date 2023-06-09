@@ -57,7 +57,7 @@
           </div>
 
           <!-- Base.png es para tener 2 columnas en desktop cdo hay un sólo ítem en la fila -->
-          <p class="text-bold actions ellipsis" v-show="item.fileName !== 'base.png'" >{{item.fileName}}</p>
+          <p class="text-bold actions ellipsis fileName" v-show="item.fileName !== 'base.png'" >{{item.fileName}}</p>
 
           <p class="text-center ellipsis" v-show="item.additionalNote" >{{item.additionalNote}}</p>
 
@@ -158,7 +158,6 @@ export default {
 </script>
 
 <style scoped >
-
 .page {background: #464646a6;}
 
 h4, h5 {color: aliceblue}
@@ -166,10 +165,13 @@ h4, h5 {color: aliceblue}
 p, span {color: #ddd}
 
 small, p a {
-  color: #000;
+  color: aqua;
   letter-spacing: 1px;
   font-size: 13px;
   text-decoration: underline;
+}
+p.fileName {
+ font-size: 16px;
 }
 
 p.ellipsis {text-align: center; max-width: 350px; margin: 5px auto}
