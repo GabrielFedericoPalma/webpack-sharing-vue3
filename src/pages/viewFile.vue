@@ -202,9 +202,9 @@ export default {
 <style scoped>
 video, .image {width: 100%; max-width: 600px;}
 
-.page {background: #464646a6;}
+.page {background: #000000bd}
 
-h4, h5 {color: aliceblue}
+h4, h5 {color: #fff}
 
 p, span {color: #ddd}
 

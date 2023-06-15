@@ -13,7 +13,8 @@ export const firebase_db_store = defineStore('firebase_db_store', {
       team_desc: 'Sharing',
       team_color: '#466b73',
       team_icon: '/images/sharing-icon.png',
-      bgImage: ''
+      bgImage: '',
+      bgBodyImage: ''
     },
     folder_name: 'undefined',
     isFolder: false,
@@ -84,7 +85,8 @@ export const firebase_db_store = defineStore('firebase_db_store', {
           team_icon: '/images/sharing-icon.png',
           team_color: brand_color,
           url_team: url_team,
-          bgImage: ''
+          bgImage: '',
+          bgBodyImage: ''
         }
 
         if(url_team){
@@ -101,7 +103,8 @@ export const firebase_db_store = defineStore('firebase_db_store', {
                team_icon: data.team_icon,
                team_color: data.team_color,
                url_team: url_team,
-               bgImage: data.bgImage
+               bgImage: data.bgImage,
+               bgBodyImage: data.bgBodyImage
              }
 
           } else {

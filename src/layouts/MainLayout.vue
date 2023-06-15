@@ -118,7 +118,8 @@
   <!-- ******* END MENU LATERAL ******* -->
 
   <!-- PAGE CONTAINER -->
-      <q-page-container id="pageContainer" >
+      <q-page-container id="pageContainer"
+        v-bind:style="{backgroundImage:'url('+store.conf_team.bgBodyImage+')'}">
         <router-view />
       </q-page-container>
   <!-- END PAGE CONTAINER -->
@@ -179,6 +180,11 @@
   </script>
 
 <style scoped>
+
+#pageContainer {
+  background-size:cover; background-attachment: fixed;
+}
+
 @font-face {
   font-family: GreatVibes;
   src: url(../assets/fonts/GreatVibes-Regular.ttf);

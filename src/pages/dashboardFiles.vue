@@ -61,10 +61,10 @@
 
           <p class="text-center ellipsis" v-show="item.additionalNote" >{{item.additionalNote}}</p>
 
-          <small @click="showFile(item.id)" class="actions" v-show="item.fileName !== 'base.png'" >Details</small>
+          <small @click="showFile(item.id)" class="actions" v-show="item.fileName !== 'base.png'" >More Details</small>
 
           <p class="text-center q-mt-none " v-show="item.link" >
-            <a :href="item.link" :title="item.link" target="_blank" >Link</a>
+            <a :href="item.link" :title="item.link" target="_blank" >Demo Link</a>
           </p>
 
     </div>
@@ -158,11 +158,11 @@ export default {
 </script>
 
 <style scoped >
-.page {background: #464646a6;}
+.page {background: #000000bd}
 
-h4, h5 {color: aliceblue}
+h4, h5 {color: #fff}
 
-p, span {color: #ddd}
+p, span {color: #fff}
 
 small, p a {
   color: aqua;

@@ -143,7 +143,7 @@ module.exports = configure(function (ctx) {
         short_name: `I am Sharing`,
         description: `Sharing files under profiles`,
         display: 'standalone',
-        orientation: 'portrait',
+        orientation: 'any',
         background_color: '#000000',
         theme_color: '#000000',
         icons: [
