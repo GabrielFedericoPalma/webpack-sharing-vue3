@@ -20,14 +20,14 @@
 
       <div
         v-for="(item, index, key) in store.firestoreFolderNameData"
-        :key="item.$key" :class="{base: item.fileName === 'base.png'}" >
+        :key="item.$key" :class="{base: item.fileName === 'base.png'}" v-show="item.display !== 'none'" >
 
           <!-- IS IMG -->
           <div v-if="isImg(item.fileType)" class="file" >
             <!-- <p>{{ item.orden }}</p> -->
             <!-- <p>{{ item.id }}</p> -->
             <h4 v-show="item.title_name" >{{ item.title_name }}</h4>
-            <div class="img" style="background-size:cover; background-position: center;" v-bind:style="{backgroundImage:'url('+item.url+')'}" >
+            <div class="img" v-bind:style="{backgroundImage:'url('+item.url+')'}" >
             </div>
           </div>
 
@@ -59,7 +59,7 @@
           <!-- Base.png es para tener 2 columnas en desktop cdo hay un sólo ítem en la fila -->
           <p class="text-bold actions ellipsis fileName" v-show="item.fileName !== 'base.png'" >{{item.fileName}}</p>
 
-          <p class="text-center ellipsis" v-show="item.additionalNote" >{{item.additionalNote}}</p>
+          <p class="text-center ellipsis-2-lines" v-show="item.additionalNote" >{{item.additionalNote}}</p>
 
           <small @click="showFile(item.id)" class="actions" v-show="item.fileName !== 'base.png'" >More Details</small>
 
@@ -174,7 +174,7 @@ p.fileName {
  font-size: 16px;
 }
 
-p.ellipsis {text-align: center; max-width: 350px; margin: 5px auto}
+p.ellipsis-2-lines {text-align: center; max-width: 350px; margin: 5px auto}
 /*
 .q-dialog {background: #5d6e60e6;}
 .q-dialog .q-btn {width:auto}
@@ -186,7 +186,7 @@ p.ellipsis {text-align: center; max-width: 350px; margin: 5px auto}
 }
 
 @media screen and (max-width: 500px) {
-  p.ellipsis {max-width: 248px;}
+  p.ellipsis-2-lines {max-width: 248px;}
 }
 
 </style>
