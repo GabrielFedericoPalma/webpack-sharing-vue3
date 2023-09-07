@@ -1,0 +1,29 @@
+MY LINK QR 654
+PWA Quasar app to create QR restaurant digital menus & product catalogs. Profiles & products CRUD, Auth & user roles, import data by .xls format, QR generator, vue reduce images. UI/UX Product design.
+
+SHARING 510
+PWA Quasar app to sharing public & private files under profiles. Firebase storage, db & security rules. Pinia & Composition API.
+
+IRREGULAR VERBS 548
+PWA Quasar app to practice english irregular verbs in English. Sync Google sheet to Firebase DB. Composition API.
+
+Veri Movies 880 a3
+SSR Nuxt3. Technical challenge to apply to a job. Focus in good practices & scalability. Typescript. API Movie DB.
+
+BI 595 c0
+Wordpress Corporate website. Layout (CSS BEM Methodology) & implementation in Pantheon.
+
+TAKEDA 455 c1
+Drupal Corporate website. Layout, bootstrap & implementation in Pantheon.
+
+TONIC 3 334 e2
+Corporate website. Design based layout & implementation.
+
+OCTAVIAN 911 e3
+Landing page. Design based layout & implementation.
+
+My Link Site 750 e4
+Product Landing page. Planning, marketing, design & layout.
+
+GPalmadev 522 e5
+Personal website. Planning, marketing, design & layout.

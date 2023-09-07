@@ -20,7 +20,7 @@
 
       <div
         v-for="(item, index, key) in store.firestoreFolderNameData"
-        :key="item.$key" :class="{base: item.fileName === 'base.png'}" v-show="item.display !== 'none'" >
+        :key="item.$key" >
 
           <!-- IS IMG -->
           <div v-if="isImg(item.fileType)" class="file" >

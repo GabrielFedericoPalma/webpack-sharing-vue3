@@ -105,7 +105,7 @@
             <q-item-section>
               <q-item-label>Login</q-item-label>
             </q-item-section>
-            <small>v 2.0.0</small>
+            <small>v 3.0.0</small>
           </q-item>
         </router-link>
         <!-- END LOGIN -->
