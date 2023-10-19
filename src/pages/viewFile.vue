@@ -57,7 +57,7 @@
 
   <q-card-section class="q-mb-none q-pb-none" style="max-width: 650px; margin: auto" >
     <p class="text-center fileName" style="margin-bottom:8px" ><strong>{{store.viewFile.fileName}}</strong></p>
-    <p class="text-center" style="margin-bottom:8px" >Uploaded: <strong>{{dateParse(store.viewFile.fileDate)}}</strong></p>
+    <p class="text-center" style="margin-bottom:8px" v-if="login_store.isLogged"  >Uploaded: <strong>{{dateParse(store.viewFile.fileDate)}}</strong></p>
     <p class="text-center" style="margin-bottom:8px" v-if="login_store.isLogged" >By: <em>{{store.viewFile.user}}</em></p>
     <p class="text-center" v-show="store.viewFile.additionalNote" >{{store.viewFile.additionalNote}}</p>
   </q-card-section>
@@ -70,12 +70,12 @@
  <!-- END COMMENTS -->
 
   <!-- Edit File -->
-  <div class="column items-center justify-center q-mt-none q-pt-none" >
-    <a :href="store.viewFile.url" download target="_blank" >
+  <div class="column items-center justify-center q-mt-none q-pt-none q-pb-md" >
+    <a :href="store.viewFile.url" download target="_blank" v-show="login_store.isLogged" >
       <small class="actions">Download</small>
     </a>
     <a :href="store.viewFile.link" target="_blank" v-show="store.viewFile.link" >
-      <small class="actions">Link</small>
+      <small class="actions">{{ (store.viewFile.id === '693')? 'Link Grupo Wsp' : 'Link' }}</small>
     </a>
     <small class="actions" @click="alert('Edit file is commin soon')" v-show="login_store.isLogged && store.viewFile.uid == currentUser" >Edit file</small>
     <q-icon name="delete" @click="deleteDoc()" color="black" size="20px" title="Delete file" class="clickeable" v-show="login_store.isLogged && store.viewFile.uid == currentUser" />
