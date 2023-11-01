@@ -51,8 +51,18 @@
               </video>
           </div>
 
+          <!-- IS AUDIO -->
+          <div v-if="isAudio(item.fileType)" class="audioContainer">
+              <!-- <p>{{ item.id }}</p> -->
+              <h5 class="q-mb-lg q-mt-none text-left" v-show="item.title_name" >{{ item.title_name }}</h5>
+              <audio controls>
+                <source :src="item.url" >
+                Your browser does not support the video tag.
+              </audio>
+          </div>
+
           <!-- IS GRAL FILE -->
-          <div class="image column items-center justify-center" v-if="!isImg(item.fileType) && !isPdf(item.fileType) && !isVideo(item.fileType)" style="height: 320px" >
+          <div class="image column items-center justify-center" v-if="!isAudio(item.fileType) && !isImg(item.fileType) && !isPdf(item.fileType) && !isVideo(item.fileType)" style="height: 320px" >
             <q-icon name="task" color="secondary" style="font-size: 200px;" ></q-icon>
           </div>
 
@@ -175,11 +185,12 @@ p.fileName {
 }
 
 p.ellipsis-2-lines {text-align: center; max-width: 350px; margin: 5px auto}
-/*
-.q-dialog {background: #5d6e60e6;}
-.q-dialog .q-btn {width:auto}
-*/
-.base{opacity: 0 !important}
+
+video, .img {border-radius: 10px;}
+
+.audioContainer {
+  width: 350px;
+}
 
 @media screen and (max-width: 1000px) {
   .base{display: none !important}
@@ -187,6 +198,11 @@ p.ellipsis-2-lines {text-align: center; max-width: 350px; margin: 5px auto}
 
 @media screen and (max-width: 500px) {
   p.ellipsis-2-lines {max-width: 248px;}
+
+  .audioContainer {
+    width: 100%;
+  }
+
 }
 
 </style>

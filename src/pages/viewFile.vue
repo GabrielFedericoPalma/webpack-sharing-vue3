@@ -47,6 +47,12 @@
           </video>
       </div>
 
+      <div v-if="isAudio(store.viewFile.fileType)" class="videoContainer" >
+          <audio controls>
+            <source :src="store.viewFile.url" >
+            Your browser does not support the video tag.
+          </audio>
+      </div>
       <!-- IS GRAL FILE
       <div class="image q-mt-md" v-if="!isImg(store.viewFile.fileType) && !isPdf(store.viewFile.fileType) && !isVideo(store.viewFile.fileType)" >
           <q-icon name="task" color="secondary" style="font-size: 200px;" ></q-icon>
