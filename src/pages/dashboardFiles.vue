@@ -8,7 +8,7 @@
           <!-- <span>folders</span> -->
         </div>
         <div class="titleCentered" >
-          <q-icon name="folder" /><span class="text-uppercase" >{{store.folder_name}}</span>
+          <q-icon name="folder" /><span class="text-uppercase" >{{store.folder_name === 'dj'?'Dj sets':store.folder_name}}</span>
         </div>
         <div class="cursor-pointer q-px-lg z-top" title="Share folder" @click="share()" v-show="login_store.isLogged" >
           <q-icon name="share" />
@@ -55,6 +55,7 @@
           <div v-if="isAudio(item.fileType)" class="audioContainer">
               <!-- <p>{{ item.id }}</p> -->
               <h5 class="q-mb-lg q-mt-none text-left" v-show="item.title_name" >{{ item.title_name }}</h5>
+              <img :src="item.poster" alt="Poster" class="imgPoster" >
               <audio controls>
                 <source :src="item.url" >
                 Your browser does not support the video tag.
@@ -191,7 +192,12 @@ video, .img {border-radius: 10px;}
 .audioContainer {
   width: 350px;
 }
-
+.imgPoster {
+  width: 100%;
+  max-width: 200px;
+  margin: 8px auto;
+  border-radius: 12px;
+}
 @media screen and (max-width: 1000px) {
   .base{display: none !important}
 }
