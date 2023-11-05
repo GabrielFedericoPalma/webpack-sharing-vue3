@@ -11,7 +11,7 @@
 
       <q-form @submit="login" >
 
-        <aside v-show="local_team_name" class="column items-center" >
+        <aside v-show="local_url_team" class="column items-center" >
           <p class="q-mb-none" >
             <small>Último acceso</small>
           </p>
@@ -50,8 +50,8 @@ export default {
   },
   mounted(){
     this.local_team_name = this.$q.localStorage.getItem('team_name') || ''
-    this.local_folder_name = this.$q.localStorage.getItem('team_name') || ''
-    this.local_url_name = this.$q.localStorage.getItem('team_name') || ''
+    this.local_folder_name = this.$q.localStorage.getItem('folder_name') || ''
+    this.local_url_team = this.$q.localStorage.getItem('url_team') || ''
   },
   methods: {
     login(){

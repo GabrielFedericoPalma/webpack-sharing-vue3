@@ -10,7 +10,7 @@ export const firebase_db_store = defineStore('firebase_db_store', {
       url_team: 'default',
       team_name: 'I am',
       team_desc: 'Sharing',
-      team_color: '#466b73',
+      team_color: '#292929',
       team_icon: '/images/sharing-icon.png',
       bgImage: '',
       bgBodyImage: ''
@@ -74,7 +74,7 @@ export const firebase_db_store = defineStore('firebase_db_store', {
         this.showSpinner = true
 
         let obj_conf = {}
-        let brand_color = '#466b73'
+        let brand_color = '#292929'
         const url_team = urlTeam
 
         // Obj Default
@@ -116,10 +116,6 @@ export const firebase_db_store = defineStore('firebase_db_store', {
         setCssVar('primary',String(obj_conf.team_color))
 
         this.conf_team = obj_conf
-
-        LocalStorage.set('team_name', this.conf_team.team_name)
-        LocalStorage.set('url_team', this.conf_team.url_team)
-        LocalStorage.set('folder_name', this.folder_name)
 
         this.showSpinner = false
 
@@ -193,6 +189,12 @@ export const firebase_db_store = defineStore('firebase_db_store', {
       this.set_url_team(url_team)
 
       this.set_folder_name(folder_name)
+
+      // Set Local Storage
+      LocalStorage.set('team_name', this.conf_team.team_name)
+      LocalStorage.set('url_team', url_team)
+      LocalStorage.set('folder_name', folder_name)
+      // End Set Local Storage
 
       // console.log(url_team, folder_name)
       const q = query(doc(db, url_team, folder_name))
