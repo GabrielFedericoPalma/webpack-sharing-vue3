@@ -1,8 +1,7 @@
 import { defineStore } from 'pinia';
 import { db } from 'boot/firebase.js'
 import { doc, query, collection, getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore"
-import { getCssVar, setCssVar } from 'quasar'
-import { Notify } from 'quasar'
+import { getCssVar, setCssVar, LocalStorage, Notify } from 'quasar'
 
 export const firebase_db_store = defineStore('firebase_db_store', {
   state: () => ({
@@ -117,6 +116,10 @@ export const firebase_db_store = defineStore('firebase_db_store', {
         setCssVar('primary',String(obj_conf.team_color))
 
         this.conf_team = obj_conf
+
+        LocalStorage.set('team_name', this.conf_team.team_name)
+        LocalStorage.set('url_team', this.conf_team.url_team)
+        LocalStorage.set('folder_name', this.folder_name)
 
         this.showSpinner = false
 

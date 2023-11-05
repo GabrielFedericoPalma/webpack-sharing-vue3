@@ -129,6 +129,10 @@ export default {
   methods: {
     play(index){
       const element = this.$refs.audio[index]
+      const elements = this.$refs.audio
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].pause();
+      }
       element.play()
       this.indexGif = index
     },

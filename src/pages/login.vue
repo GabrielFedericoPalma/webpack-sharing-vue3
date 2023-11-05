@@ -11,6 +11,15 @@
 
       <q-form @submit="login" >
 
+        <aside v-show="local_team_name" class="column items-center" >
+          <p class="q-mb-none" >
+            <small>Último acceso</small>
+          </p>
+          <a :href="'https://iamsharing.web.app/'+local_url_team+'/'+local_folder_name" target="_blank" >
+            <q-btn color="accent" >{{ local_team_name }}</q-btn>
+          </a>
+        </aside>
+        <hr>
         <!-- SUBMINT -->
         <q-card-actions align="center" class="column text-primary q-pt-none" >
             <img src="images/Google-G-Logo.png" alt="" style="width: 150px" >
@@ -33,8 +42,16 @@ import { login_store } from 'stores/login_store.js'
 export default {
   data () {
     return {
-      login_store: login_store()
+      login_store: login_store(),
+      local_team_name: null,
+      local_folder_name: null,
+      local_url_team: null
     }
+  },
+  mounted(){
+    this.local_team_name = this.$q.localStorage.getItem('team_name') || ''
+    this.local_folder_name = this.$q.localStorage.getItem('team_name') || ''
+    this.local_url_name = this.$q.localStorage.getItem('team_name') || ''
   },
   methods: {
     login(){
