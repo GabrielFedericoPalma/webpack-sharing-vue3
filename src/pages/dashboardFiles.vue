@@ -10,7 +10,7 @@
         <div class="titleCentered" >
           <q-icon name="folder" /><span class="text-uppercase" >{{store.folder_name === 'dj'?'Dj sets':store.folder_name}}</span>
         </div>
-        <div class="cursor-pointer q-px-lg z-top" title="Share folder" @click="share()" v-show="login_store.isLogged" >
+        <div class="cursor-pointer q-px-lg z-top" title="Share folder" @click="share()" >
           <q-icon name="share" />
           <span>share</span>
         </div>
@@ -52,27 +52,30 @@
           </div>
 
           <!-- IS AUDIO -->
-          <div v-if="isAudio(item.fileType)" class="audioContainer">
+          <div v-if="isAudio(item.fileType)" class="audioContainer" >
               <!-- <p>{{ item.id }}</p> -->
-              <h5 class="q-mb-lg q-mt-none text-left" v-show="item.title_name" >{{ item.title_name }}</h5>
-              <img :src="item.poster" alt="Poster" class="imgPoster" >
-              <audio controls>
+              <h6 class="q-my-none text-center text-white" v-show="item.title_name" >{{ item.title_name }}</h6>
+              <img :src="item.poster" alt="Poster" class="imgPoster" v-show="showGif[index] !== indexGif" >
+              <img :src="item?.posterGif" alt="Poster" class="imgPoster" v-show="showGif[index] === indexGif" >
+              <audio ref="audio" >
                 <source :src="item.url" >
                 Your browser does not support the video tag.
               </audio>
+              <aside class="row glutter justify-center" >
+                <q-btn @click="play(index)" label="play" color="accent" />
+                <q-btn @click="pause(index)" label="pause" color="secondary" />
+              </aside>
+              <a :href="item.url" download target="_blank" >Download</a>
           </div>
 
           <!-- IS GRAL FILE -->
           <div class="image column items-center justify-center" v-if="!isAudio(item.fileType) && !isImg(item.fileType) && !isPdf(item.fileType) && !isVideo(item.fileType)" style="height: 320px" >
             <q-icon name="task" color="secondary" style="font-size: 200px;" ></q-icon>
           </div>
-
-          <!-- Base.png es para tener 2 columnas en desktop cdo hay un sólo ítem en la fila -->
-          <p class="text-bold actions ellipsis fileName" v-show="item.fileName !== 'base.png'" >{{item.fileName}}</p>
-
+          <p class="text-center q-mb-none text-bold fileName" >{{item.fileName}}</p>
           <p class="text-center ellipsis-2-lines" v-show="item.additionalNote" >{{item.additionalNote}}</p>
 
-          <small @click="showFile(item.id)" class="actions" v-show="item.fileName !== 'base.png'" >More Details</small>
+          <small @click="showFile(item.id)" class="actions" v-show="!item?.poster" >More Details</small>
 
           <p class="text-center q-mt-none " v-show="item.link" >
             <a :href="item.link" :title="item.link" target="_blank" >Demo Link</a>
@@ -110,7 +113,10 @@ export default {
       store: firebase_db_store(),
       login_store: login_store(),
       visible: true,
-      message: 'There are not files created yet'
+      message: 'There are not files created yet',
+      audioElement: '',
+      showGif: [0,1,2,3,4],
+      indexGif: null,
     }
   },
   created(){
@@ -121,14 +127,24 @@ export default {
     this.store.prevFirestoreFolderNameQuery(url_team, folder_name)
   },
   methods: {
+    play(index){
+      const element = this.$refs.audio[index]
+      element.play()
+      this.indexGif = index
+    },
+    pause(index){
+      console.log(this.$refs.audio, index);
+      this.$refs.audio[index].pause()
+      this.indexGif = null
+    },
     goToFolders(){
         this.$router.push('/'+this.store.conf_team.url_team+'/folders')
     },
     share(){
-
+        const self = this
         const shareData = {
-            title: 'GPalmadev',
-            text: 'Compartido por I am sharing',
+            title: self.store.conf_team.team_name,
+            text: self.store.conf_team.team_name+' '+self.store.conf_team.team_desc,
             url: window.location.href
           }
 
@@ -163,8 +179,7 @@ export default {
     }
   },
   computed: {
-
-  }
+  },
 }
 </script>
 
@@ -191,12 +206,22 @@ video, .img {border-radius: 10px;}
 
 .audioContainer {
   width: 350px;
+  min-height: 100px;
+
+}
+.audioContainer a {
+  text-decoration: underline;
+  color: white;
 }
 .imgPoster {
   width: 100%;
   max-width: 200px;
   margin: 8px auto;
   border-radius: 12px;
+}
+
+aside .q-btn {
+  width: 80px;
 }
 @media screen and (max-width: 1000px) {
   .base{display: none !important}
