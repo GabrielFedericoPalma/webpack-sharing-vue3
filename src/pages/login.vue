@@ -16,7 +16,7 @@
             <small>Último acceso</small>
           </p>
           <a :href="'https://iamsharing.web.app/'+local_url_team+'/'+local_folder_name" target="_blank" >
-            <q-btn color="accent" >{{ local_team_name }}</q-btn>
+            <q-btn color="accent" >{{ local_url_team }}</q-btn>
           </a>
         </aside>
         <hr>
