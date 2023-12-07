@@ -54,6 +54,7 @@
           <!-- IS AUDIO -->
           <div v-if="isAudio(item.fileType)" class="audioContainer" >
               <!-- <p>{{ item.id }}</p> -->
+              <!-- <p>{{ item.orden }}</p> -->
               <h6 class="q-my-none text-center text-white" v-show="item.title_name" >{{ item.title_name }}</h6>
               <img :src="item.poster" alt="Poster" class="imgPoster" v-show="showGif[index] !== indexGif" >
               <img :src="item?.posterGif" alt="Poster" class="imgPoster" v-show="showGif[index] === indexGif" >
@@ -191,7 +192,7 @@ export default {
 .page {background: #000000bd}
 
 h4, h5 {color: #fff}
-
+h6 {font-size: 18px; font-weight: 500;}
 p, span {color: #fff}
 
 small, p a {
