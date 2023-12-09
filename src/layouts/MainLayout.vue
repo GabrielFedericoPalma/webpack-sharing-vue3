@@ -118,7 +118,7 @@
   <!-- ******* END MENU LATERAL ******* -->
 
   <!-- PAGE CONTAINER -->
-      <q-page-container id="pageContainer" >
+      <q-page-container id="pageContainer" :style="{backgroundImage:'url('+store.conf_team.bgBodyImage+')'}" >
         <router-view />
       </q-page-container>
   <!-- END PAGE CONTAINER -->

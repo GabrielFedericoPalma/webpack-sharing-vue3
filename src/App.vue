@@ -4,7 +4,7 @@
     <!-- SPINNER -->
     <div class="spinnerWrapper" v-if="store.showSpinner" >
       <q-spinner-rings
-        color="warning"
+        color="accent"
         size="5em"
       />
     </div>

@@ -16,7 +16,7 @@
         </div>
       </div>
 
-    <q-card-section class="wrapperFile" >
+    <q-card-section class="wrapperFile" :class="{blackShadow: store.conf_team.url_team === 'gpalmadev'}" >
 
       <div
         v-for="(item, index, key) in store.firestoreFolderNameData"
@@ -79,7 +79,7 @@
             <q-icon name="task" color="secondary" style="font-size: 200px;" ></q-icon>
           </div>
 
-          <div v-show="!item?.poster" class="commonsLinks" >
+          <aside v-show="!item?.poster" class="commonLinks" >
             <p class="text-center q-mb-none text-bold fileName" >{{item.fileName}}</p>
             <p class="text-center ellipsis-2-lines" v-show="item.additionalNote" >{{item.additionalNote}}</p>
 
@@ -88,7 +88,7 @@
             <p class="text-center q-mt-none " v-show="item.link" >
               <a :href="item.link" :title="item.link" target="_blank" >Demo Link</a>
             </p>
-          </div>
+          </aside>
 
     </div>
 
@@ -126,6 +126,8 @@ export default {
       audioElement: '',
       showGif: [0,1,2,3,4],
       indexGif: null,
+      savedHeaderImg: '',
+      savedBgImg: ''
     }
   },
   created(){
@@ -137,6 +139,9 @@ export default {
   },
   methods: {
     play(index, poster){
+
+      this.savedHeaderImg = this.savedHeaderImg || this.store.conf_team.bgImage
+      this.savedBgImg = this.savedBgImg || this.store.conf_team.bgBodyImage
 
       this.store.conf_team.bgImage = poster
       this.store.conf_team.bgBodyImage = poster
@@ -150,9 +155,13 @@ export default {
       this.indexGif = index
     },
     pause(index){
-      console.log(this.$refs.audio, index);
+      // console.log(this.$refs.audio, index);
       this.$refs.audio[index].pause()
       this.indexGif = null
+
+      this.store.conf_team.bgImage = this.savedHeaderImg || this.store.conf_team.bgImage
+      this.store.conf_team.bgBodyImage = this.savedBgImg || this.store.conf_team.bgBodyImage
+
     },
     goToFolders(){
         this.$router.push('/'+this.store.conf_team.url_team+'/folders')
@@ -215,12 +224,21 @@ small, p a {
 }
 p.fileName {
  font-size: 16px;
+ color: aqua;
 }
 
 p.ellipsis-2-lines {text-align: center; max-width: 350px; margin: 5px auto}
 
 video, .img {border-radius: 10px;}
-
+.blackShadow {background-color: #141516ad}
+.commonLinks {
+  background-color: #000000bf;
+  padding: 10px 4px;
+  width: 90%;
+  margin:auto;
+  border: 2px solid aqua;
+  border-radius:12px;
+}
 .audioContainer {
   width: 350px;
   min-height: 100px;
@@ -247,6 +265,10 @@ aside .q-btn {
   p.ellipsis-2-lines {max-width: 248px;}
 
   .audioContainer {
+    width: 100%;
+  }
+
+  .wrapperFile div {
     width: 90%;
   }
 
