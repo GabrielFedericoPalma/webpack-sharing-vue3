@@ -1,6 +1,6 @@
 <template>
 
- <q-card class="page" >
+ <q-card class="page" :style="{backgroundImage:'url('+store.conf_team.bgBodyImage+')'}" >
 
       <div class="titleEdit bg-primary" >
         <div class="cursor-pointer q-px-lg z-top" @click="goToFolders()"  v-if="login_store.isLogged" >
@@ -55,32 +55,40 @@
           <div v-if="isAudio(item.fileType)" class="audioContainer" >
               <!-- <p>{{ item.id }}</p> -->
               <!-- <p>{{ item.orden }}</p> -->
-              <h6 class="q-my-none text-center text-white" v-show="item.title_name" >{{ item.title_name }}</h6>
+              <h6 class="text-center q-mt-none q-mb-xs text-bold fileName" style="color: aqua" >{{item.fileName}}</h6>
+              <p class="text-center q-mb-none" v-show="item.additionalNote" >{{item.additionalNote}}</p>
+              <p class="q-mb-xs q-mt-sm text-center text-bold" v-show="item.title_name" style="color: darkkhaki" >{{ item.title_name }}</p>
               <img :src="item.poster" alt="Poster" class="imgPoster" v-show="showGif[index] !== indexGif" >
               <img :src="item?.posterGif" alt="Poster" class="imgPoster" v-show="showGif[index] === indexGif" >
               <audio ref="audio" >
                 <source :src="item.url" >
-                Your browser does not support the video tag.
+                Your browser does not support the audio tag.
               </audio>
-              <aside class="row glutter justify-center" >
-                <q-btn @click="play(index)" label="play" color="accent" />
+              <aside class="row glutter justify-center q-mb-xs" >
+                <q-btn @click="play(index, item.poster)" label="play" color="accent" />
                 <q-btn @click="pause(index)" label="pause" color="secondary" />
               </aside>
-              <a :href="item.url" download target="_blank" >Download</a>
+              <p class="q-mb-none" >
+                <a :href="item.url" download target="_blank" >Download</a>
+              </p>
+
           </div>
 
           <!-- IS GRAL FILE -->
           <div class="image column items-center justify-center" v-if="!isAudio(item.fileType) && !isImg(item.fileType) && !isPdf(item.fileType) && !isVideo(item.fileType)" style="height: 320px" >
             <q-icon name="task" color="secondary" style="font-size: 200px;" ></q-icon>
           </div>
-          <p class="text-center q-mb-none text-bold fileName" >{{item.fileName}}</p>
-          <p class="text-center ellipsis-2-lines" v-show="item.additionalNote" >{{item.additionalNote}}</p>
 
-          <small @click="showFile(item.id)" class="actions" v-show="!item?.poster" >More Details</small>
+          <div v-show="!item?.poster" class="commonsLinks" >
+            <p class="text-center q-mb-none text-bold fileName" >{{item.fileName}}</p>
+            <p class="text-center ellipsis-2-lines" v-show="item.additionalNote" >{{item.additionalNote}}</p>
 
-          <p class="text-center q-mt-none " v-show="item.link" >
-            <a :href="item.link" :title="item.link" target="_blank" >Demo Link</a>
-          </p>
+            <small @click="showFile(item.id)" class="actions" >More Details</small>
+
+            <p class="text-center q-mt-none " v-show="item.link" >
+              <a :href="item.link" :title="item.link" target="_blank" >Demo Link</a>
+            </p>
+          </div>
 
     </div>
 
@@ -128,7 +136,11 @@ export default {
     this.store.prevFirestoreFolderNameQuery(url_team, folder_name)
   },
   methods: {
-    play(index){
+    play(index, poster){
+
+      this.store.conf_team.bgImage = poster
+      this.store.conf_team.bgBodyImage = poster
+
       const element = this.$refs.audio[index]
       const elements = this.$refs.audio
       for (let i = 0; i < elements.length; i++) {
@@ -212,11 +224,13 @@ video, .img {border-radius: 10px;}
 .audioContainer {
   width: 350px;
   min-height: 100px;
-
+  background-color: #141516ad;
+  padding: 16px 0;
+  border-radius: 12px;
+  box-shadow: 0px 1px 2px rgb(50 128 243 / 60%);
 }
 .audioContainer a {
   text-decoration: underline;
-  color: white;
 }
 .imgPoster {
   width: 100%;
@@ -228,15 +242,12 @@ video, .img {border-radius: 10px;}
 aside .q-btn {
   width: 80px;
 }
-@media screen and (max-width: 1000px) {
-  .base{display: none !important}
-}
 
 @media screen and (max-width: 500px) {
   p.ellipsis-2-lines {max-width: 248px;}
 
   .audioContainer {
-    width: 100%;
+    width: 90%;
   }
 
 }
