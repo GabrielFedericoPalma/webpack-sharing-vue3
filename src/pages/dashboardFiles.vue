@@ -10,7 +10,7 @@
         <div class="titleCentered" >
           <q-icon name="folder" /><span class="text-uppercase" >{{store.folder_name === 'dj'?'Dj sets':store.folder_name}}</span>
         </div>
-        <div class="cursor-pointer q-px-lg z-top" title="Share folder" @click="share()" >
+        <div class="cursor-pointer q-px-lg z-top" title="Share folder" @click="share()" v-if="login_store.isLogged" >
           <q-icon name="share" />
           <span>share</span>
         </div>
