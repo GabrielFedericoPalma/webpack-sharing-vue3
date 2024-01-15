@@ -29,6 +29,7 @@
             <h4 v-show="item.title_name" >{{ item.title_name }}</h4>
             <div class="img" v-bind:style="{backgroundImage:'url('+item.url+')'}" >
             </div>
+
           </div>
 
           <!-- IS PDF
@@ -80,14 +81,14 @@
           </div>
 
           <aside v-show="!item?.poster" class="commonLinks" >
-            <p class="text-center q-mb-none text-bold fileName" >{{item.fileName}}</p>
-            <p class="text-center ellipsis-2-lines" v-show="item.additionalNote" >{{item.additionalNote}}</p>
+              <p class="text-center q-mb-none text-bold fileName" >{{item.fileName}}</p>
+              <p class="text-center ellipsis-2-lines" v-show="item.additionalNote" >{{item.additionalNote}}</p>
 
-            <small @click="showFile(item.id)" class="actions" >More Details</small>
+              <small @click="showFile(item.id)" class="actions" >More Details</small>
 
-            <p class="text-center q-mt-none " v-show="item.link" >
-              <a :href="item.link" :title="item.link" target="_blank" >Demo Link</a>
-            </p>
+              <p class="text-center q-mt-none " v-show="item.link" >
+                <a :href="item.link" :title="item.link" target="_blank" >Demo Link</a>
+              </p>
           </aside>
 
     </div>
@@ -224,7 +225,7 @@ small, p a {
 }
 p.fileName {
  font-size: 16px;
- color: aqua;
+ color: white;
 }
 
 p.ellipsis-2-lines {text-align: center; max-width: 350px; margin: 5px auto}
@@ -232,12 +233,15 @@ p.ellipsis-2-lines {text-align: center; max-width: 350px; margin: 5px auto}
 video, .img {border-radius: 10px;}
 .blackShadow {background-color: #141516ad}
 .commonLinks {
+  padding: 8px;
+  /*
   background-color: #000000bf;
   padding: 10px 4px;
   width: 90%;
   margin:auto;
   border: 2px solid aqua;
   border-radius:12px;
+  */
 }
 .audioContainer {
   width: 350px;
