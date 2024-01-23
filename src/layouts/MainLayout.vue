@@ -91,7 +91,7 @@
             <q-item-section>
               <q-item-label>Logout</q-item-label>
             </q-item-section>
-            <small>v 4.0.4</small>
+            <small>v 2.0.0</small>
           </q-item>
         </a>
         <!-- END LOGOUT -->
@@ -105,7 +105,7 @@
             <q-item-section>
               <q-item-label>Login</q-item-label>
             </q-item-section>
-            <small>v 4.0.4</small>
+            <small>v 2.0.0</small>
           </q-item>
         </router-link>
         <!-- END LOGIN -->

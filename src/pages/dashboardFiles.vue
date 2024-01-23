@@ -46,7 +46,7 @@
           <div v-if="isVideo(item.fileType)" class="videoContainer" >
               <!-- <p>{{ item.id }}</p> -->
               <h4 class="q-mb-md q-pb-sm q-mt-none text-left" v-show="item.title_name" >{{ item.title_name }}</h4>
-              <video controls>
+              <video controls preload="metadata" >
                 <source :src="item.url" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -61,7 +61,7 @@
               <p class="q-mb-xs q-mt-sm text-center text-bold" v-show="item.title_name" style="color: darkkhaki" >{{ item.title_name }}</p>
               <img :src="item.poster" alt="Poster" class="imgPoster" v-show="showGif[index] !== indexGif" >
               <img :src="item?.posterGif" alt="Poster" class="imgPoster" v-show="showGif[index] === indexGif" >
-              <audio ref="audio" >
+              <audio ref="audio" preload="metadata" >
                 <source :src="item.url" >
                 Your browser does not support the audio tag.
               </audio>
