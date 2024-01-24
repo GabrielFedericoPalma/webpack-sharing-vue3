@@ -83,6 +83,9 @@
     <a :href="store.viewFile.link" target="_blank" v-show="store.viewFile.link" >
       <small class="actions">{{ (store.viewFile.id === '693')? 'Link Grupo Wsp' : 'Link' }}</small>
     </a>
+    <a :href="store.viewFile.link_2" target="_blank" v-show="store.viewFile.link_2" >
+      <small class="actions">{{ (store.viewFile.id === '693')? 'Link Doc (speech y costo)' : 'Link' }}</small>
+    </a>
     <small class="actions" @click="alert('Edit file is commin soon')" v-show="login_store.isLogged && store.viewFile.uid == currentUser" >Edit file</small>
     <q-icon name="delete" @click="deleteDoc()" color="black" size="20px" title="Delete file" class="clickeable" v-show="login_store.isLogged && store.viewFile.uid == currentUser" />
   </div>
