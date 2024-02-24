@@ -25,19 +25,9 @@
         <img :src="store.viewFile.url" alt="img" style="width:100%; max-width:1000px" />
       </div>
 
-      <!-- IS PDF
-      <div v-if="isPdf(store.viewFile.fileType)" style="width: 80%; height: 320px" >
-        <q-pdfviewer
-          v-model="visible"
-          :src="store.viewFile.url"
-          type="html5"
-        />
+      <div v-if="isPdf(store.viewFile.fileType)" class="pdfViewer" >
+        <iframe :src="store.viewFile.url" frameborder="0" style="width: 100%; height: 100%" ></iframe>
       </div>
-      -->
-
-      <!-- <div v-if="isPdf(data.fileType)" >
-        <iframe :src="data.url" frameborder="0" style="width: 100%; height: 100%" ></iframe>
-      </div> -->
 
       <!-- IS VIDEO -->
       <div v-if="isVideo(store.viewFile.fileType)" >

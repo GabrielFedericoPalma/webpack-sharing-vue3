@@ -8,7 +8,7 @@
           <!-- <span>folders</span> -->
         </div>
         <div class="titleCentered" >
-          <q-icon name="folder" /><span class="text-uppercase" >{{store.folder_name === 'dj'?'Dj sets':store.folder_name}}</span>
+          <q-icon name="folder" /><span class="text-uppercase" >{{store.folder_name}}</span>
         </div>
         <div class="cursor-pointer q-px-lg z-top" title="Share folder" @click="share()" v-if="login_store.isLogged" >
           <q-icon name="share" />
@@ -16,7 +16,7 @@
         </div>
       </div>
 
-    <q-card-section class="wrapperFile" :class="{blackShadow: store.conf_team.url_team === 'gpalmadev'}" >
+    <q-card-section class="wrapperFile blackShadow" >
 
       <div
         v-for="(item, index, key) in store.firestoreFolderNameData"
@@ -30,26 +30,35 @@
             <div class="img" v-bind:style="{backgroundImage:'url('+item.url+')'}" >
             </div>
 
+
+            <aside>
+              <p class="text-center q-mb-none text-bold fileName" >{{item.fileName}}</p>
+              <p class="text-center ellipsis-2-lines" v-show="item.additionalNote" >{{item.additionalNote}}</p>
+            </aside>
+
           </div>
 
-          <!-- IS PDF
-          <div v-if="isPdf(item.fileType)" style="height: 320px" >
-            <q-pdfviewer
-              v-model="visible"
-              :src="item.url"
-              type="html5"
-            />
+          <div v-if="isPdf(item.fileType)" >
+            <iframe :src="item.url" frameborder="0" style="width: 100%; height: 100%" ></iframe>
+            <small @click="showFile(item.id)" class="actions" >More Details</small>
           </div>
-          -->
 
           <!-- IS VIDEO -->
           <div v-if="isVideo(item.fileType)" class="videoContainer" >
-              <!-- <p>{{ item.id }}</p> -->
-              <h4 class="q-mb-md q-pb-sm q-mt-none text-left" v-show="item.title_name" >{{ item.title_name }}</h4>
-              <video controls preload="metadata" >
-                <source :src="item.url" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+            <!-- <p>{{ item.id }}</p> -->
+            <!-- <h4 class="q-mb-md q-pb-sm q-mt-none text-left" v-show="item.title_name" >{{ item.title_name }}</h4> -->
+            <video controls preload="metadata" >
+              <source :src="item.url" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <aside>
+              <p class="q-mb-sm fileName" >{{item.fileName}}</p>
+              <p v-show="item.additionalNote" >{{item.additionalNote}}</p>
+              <p class="q-mt-none" >
+                <a :href="item.link" :title="item.link" target="_blank" >Demo Link</a>
+              </p>
+            </aside>
+
           </div>
 
           <!-- IS AUDIO -->
@@ -78,18 +87,13 @@
           <!-- IS GRAL FILE -->
           <div class="image column items-center justify-center" v-if="!isAudio(item.fileType) && !isImg(item.fileType) && !isPdf(item.fileType) && !isVideo(item.fileType)" style="height: 320px" >
             <q-icon name="task" color="secondary" style="font-size: 200px;" ></q-icon>
-          </div>
 
-          <aside v-show="!item?.poster" class="commonLinks" >
+            <aside>
               <p class="text-center q-mb-none text-bold fileName" >{{item.fileName}}</p>
               <p class="text-center ellipsis-2-lines" v-show="item.additionalNote" >{{item.additionalNote}}</p>
-
               <small @click="showFile(item.id)" class="actions" >More Details</small>
-
-              <p class="text-center q-mt-none " v-show="item.link" >
-                <a :href="item.link" :title="item.link" target="_blank" >Demo Link</a>
-              </p>
-          </aside>
+            </aside>
+          </div>
 
     </div>
 
@@ -211,7 +215,7 @@ export default {
 </script>
 
 <style scoped >
-.page {background: #000000bd}
+.page {background: #000000ce}
 
 h4, h5 {color: #fff}
 h6 {font-size: 18px; font-weight: 500;}
@@ -231,7 +235,7 @@ p.fileName {
 p.ellipsis-2-lines {text-align: center; max-width: 350px; margin: 5px auto}
 
 video, .img {border-radius: 10px;}
-.blackShadow {background-color: #141516ad}
+.blackShadow {background-color: #000000b5; border-bottom: 4px solid darkturquoise}
 .commonLinks {
   padding: 8px;
   /*
@@ -266,6 +270,13 @@ aside .q-btn {
 }
 
 @media screen and (max-width: 500px) {
+
+  .wrapperFile .videoContainer {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
   p.ellipsis-2-lines {max-width: 248px;}
 
   .audioContainer {

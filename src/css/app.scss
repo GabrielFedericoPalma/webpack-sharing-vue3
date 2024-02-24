@@ -16,7 +16,7 @@ a {text-decoration: none; color: black}
 //END COMMONS
 
 /* Drawer */
-aside {z-index:99999 !important}
+// aside {z-index:99999 !important}
 
 //PAGE
 .titleEdit {
@@ -48,21 +48,45 @@ aside {z-index:99999 !important}
 
 //DASHBOARD FILES
 .wrapperFile {text-align: center;}
-.wrapperFile h4 {text-align: left; margin: 0 0 0 10px; font-size: 24px; text-shadow: 1px 2px 3px black;}
+.wrapperFile h4 {text-align: left; margin: 0 0 10px 10px; font-size: 28px; text-shadow: 1px 2px 3px #2d2900}
 
-.wrapperFile div{margin:10px; display: inline-block;}
+.wrapperFile div{margin:10px; display: inline-block; width: auto}
 .wrapperFile div div{display: inline-block;}
 .wrapperFile .file {width: 450px; height: 350px;}
 .wrapperFile .file .img {background-size:cover; background-position: center; width: 100%; height: 100%;}
 
 .wrapperFile .videoContainer {
-  max-width: 450px;
-  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #000000a6;
+  padding: 16px;
+  width: 97%;
+  border-radius: 12px;
+}
+.wrapperFile .videoContainer aside {
+  max-width: 600px;
+  padding: 16px;
+}
+.wrapperFile .videoContainer aside p {
+  text-align: left;
+  font-size: 16px;
+}
+.wrapperFile .videoContainer aside p.fileName {
+  font-size: 20px;
+  color: aqua;
+  font-weight: 500;
+}
+.wrapperFile .videoContainer video{
+  width: auto;
+  max-width: 180px;
+  height: 300px;
+  border-radius: 12px;
+  border: 4px double black;
 }
 
-.wrapperFile .videoContainer video{
+.pdfViewer {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 div.text {min-height: 60px}

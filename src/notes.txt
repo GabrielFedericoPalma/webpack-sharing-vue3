@@ -1,3 +1,31 @@
+PORTFOLIO
+
+
+Mi tienda demo
+
+CMS base de tipo web app, desarrollado con Vue.js y Firebase con el objetivo de mantener una versión actualizada para el desarrollo de e-Commerce a medida.
+Spa/Pwa instalable en computadoras y celulares.
+CMS propio desarrollado a medida para facilitar la gestión de contenido fácil, con foco en UX.
+Backend serverless pensado para gran cantidad de productos.
+Desarrollo escalable para facilitar la incorporación de funcionalidades particulares de cada cliente.
+
+
+My Link QR
+
+Herramienta para la creación de Carta QR online de forma automatizada.
+Creación de usuarios de forma pública con el objetivo de mantener una sóla aplicación y poder brindar la auto creación de cartas por parte de los usuarios.
+Carga de productos y configuración.
+
+Administrador de Clientes y Productos
+Web app de tipo SPA / PWA Serverless para el manejo de clientes, los productos comprados y seguimiento de sus cuotas. Desarrollado a medida para un cliente del rubro de comercio.
+
+I am sharing
+Web app para compartir archivos de forma pública y privada de acuerdo a perfiles, con el objetivo de, utilizar una misma web app personalizada de acuerdo a cada perfil.
+
+
+
+----------------------------------------------------------------
+
 MY LINK QR 654
 PWA Quasar app to create QR restaurant digital menus & product catalogs. Profiles & products CRUD, Auth & user roles, import data by .xls format, QR generator, vue reduce images. UI/UX Product design.
 
