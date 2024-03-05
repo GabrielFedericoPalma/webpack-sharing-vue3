@@ -47,7 +47,7 @@
           <div v-if="isVideo(item.fileType)" class="videoContainer" >
             <!-- <p>{{ item.id }}</p> -->
             <!-- <h4 class="q-mb-md q-pb-sm q-mt-none text-left" v-show="item.title_name" >{{ item.title_name }}</h4> -->
-            <video controls preload="metadata" >
+            <video :poster="item.poster" controls preload="metadata" >
               <source :src="item.url" type="video/mp4">
               Your browser does not support the video tag.
             </video>
