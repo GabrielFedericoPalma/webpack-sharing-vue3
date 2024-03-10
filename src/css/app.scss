@@ -55,26 +55,33 @@ a {text-decoration: none; color: black}
 .wrapperFile .file {width: 450px; height: 350px;}
 .wrapperFile .file .img {background-size:cover; background-position: center; width: 100%; height: 100%;}
 
-.wrapperFile .videoContainer {
+.wrapperFile .videoContainer, .imgContainer {
   display: flex;
-  align-items: center;
   background-color: #000000a6;
   padding: 16px;
-  width: 97%;
+  width: 100%;
+  max-width: 500px;
   border-radius: 12px;
 }
+.imgContainer {
+  background-color: #00000077;
+}
 .wrapperFile .videoContainer aside {
-  max-width: 600px;
-  padding: 16px;
+  max-width: 300px;
+  padding: 0 10px;
+}
+.wrapperFile .videoContainer aside p.fileName, .imgContainer p.fileName{
+  font-size: 20px;
+  color: aqua;
+  font-weight: 500;
+}
+.wrapperFile .videoContainer aside p.additionaNote {
+  height: 200px;
 }
 .wrapperFile .videoContainer aside p {
   text-align: left;
   font-size: 16px;
-}
-.wrapperFile .videoContainer aside p.fileName {
-  font-size: 20px;
-  color: aqua;
-  font-weight: 500;
+  overflow: auto;
 }
 .wrapperFile .videoContainer video{
   width: auto;
@@ -130,6 +137,47 @@ small.actions:last-child{margin-bottom:0}
 
 .link {cursor: pointer;}
 .link:hover {text-decoration: underline;}
+
+
+
+//****SCROLL STYLES****
+.destacados::-webkit-scrollbar, nav::-webkit-scrollbar, .q-card::-webkit-scrollbar, .indiceFixed::-webkit-scrollbar, body::-webkit-scrollbar {
+  width: 6px;     /* Tamaño del scroll en vertical */
+  height: 6px;    /* Tamaño del scroll en horizontal */
+  // display: none;  /* Ocultar scroll */
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+.destacados::-webkit-scrollbar-thumb, nav::-webkit-scrollbar-thumb, .indiceFixed::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+  // background: #c9b2b2;
+  background: #e2e1e2;
+  border-radius: 4px;
+}
+.q-card::-webkit-scrollbar-thumb {
+  background: #c9b2b2;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.destacados::-webkit-scrollbar-thumb:hover, nav::-webkit-scrollbar-thumb:hover, .indiceFixed::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover, .scroll::-webkit-scrollbar-thumb:hover, p.additionaNote::-webkit-scrollbar-thumb:hover {
+  background: #f3f2f3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.q-card::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover, .scroll::-webkit-scrollbar-thumb:hover, p.additionaNote::-webkit-scrollbar-thumb:hover {
+  background: #f3f2f3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+.destacados::-webkit-scrollbar-thumb:active, nav::-webkit-scrollbar-thumb:active, .indiceFixed::-webkit-scrollbar-thumb:active, body::-webkit-scrollbar-thumb:active, .scroll::-webkit-scrollbar-thumb:active, p.additionaNote::-webkit-scrollbar-thumb:active {
+  // background-color: #c9b2b2;
+  background: #e2e1e2;
+}
+.q-card::-webkit-scrollbar-thumb:active {
+  background-color: #c9b2b2;
+}
+//***END SCROLL STYLES***
+
+
 
 @media screen and (max-width: 500px) {
   .flexButtons {flex-wrap: nowrap; margin-bottom: 8px}

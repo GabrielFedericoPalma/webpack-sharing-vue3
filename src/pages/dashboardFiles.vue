@@ -23,19 +23,23 @@
         :key="item.$key" >
 
           <!-- IS IMG -->
-          <div v-if="isImg(item.fileType)" class="file" >
-            <!-- <p>{{ item.orden }}</p> -->
-            <!-- <p>{{ item.id }}</p> -->
+          <div v-if="isImg(item.fileType)" >
             <h4 v-show="item.title_name" >{{ item.title_name }}</h4>
-            <div class="img" v-bind:style="{backgroundImage:'url('+item.url+')'}" >
+            <div class="imgContainer" >
+              <div  class="file" >
+                <!-- <p>{{ item.orden }}</p> -->
+                <!-- <p>{{ item.id }}</p> -->
+                <div class="img" v-bind:style="{backgroundImage:'url('+item.url+')'}" >
+                </div>
+                <aside>
+                  <p class="text-center q-mb-none text-bold fileName" >{{item.fileName}}</p>
+                  <p class="text-center ellipsis-2-lines" v-show="item.additionalNote" >{{item.additionalNote}}</p>
+                  <p class="q-mt-none" v-show="item.link" >
+                    <a :href="item.link" :title="item.link" target="_blank" >Link</a>
+                  </p>
+                </aside>
+              </div>
             </div>
-
-
-            <aside>
-              <p class="text-center q-mb-none text-bold fileName" >{{item.fileName}}</p>
-              <p class="text-center ellipsis-2-lines" v-show="item.additionalNote" >{{item.additionalNote}}</p>
-            </aside>
-
           </div>
 
           <div v-if="isPdf(item.fileType)" >
@@ -44,21 +48,23 @@
           </div>
 
           <!-- IS VIDEO -->
-          <div v-if="isVideo(item.fileType)" class="videoContainer" >
-            <!-- <p>{{ item.id }}</p> -->
-            <!-- <h4 class="q-mb-md q-pb-sm q-mt-none text-left" v-show="item.title_name" >{{ item.title_name }}</h4> -->
-            <video :poster="item.poster" controls preload="metadata" >
-              <source :src="item.url" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <aside>
-              <p class="q-mb-sm fileName" >{{item.fileName}}</p>
-              <p v-show="item.additionalNote" >{{item.additionalNote}}</p>
-              <p class="q-mt-none" >
-                <a :href="item.link" :title="item.link" target="_blank" >Demo Link</a>
-              </p>
-            </aside>
-
+          <div v-if="isVideo(item.fileType)" >
+            <h4 class="q-mb-md q-pb-sm q-mt-none text-left" v-show="item.title_name" >{{ item.title_name }}</h4>
+            <div class="videoContainer" >
+              <!-- <p>{{ item.orden }}</p> -->
+              <!-- <p>{{ item.id }}</p> -->
+              <video :poster="item.poster" controls preload="metadata" >
+                <source :src="item.url" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <aside>
+                <p class="q-mb-sm fileName" >{{item.fileName}}</p>
+                <p v-show="item.additionalNote" class="additionaNote" >{{item.additionalNote}}</p>
+                <p class="q-mt-none" >
+                  <a :href="item.link" :title="item.link" target="_blank" >Link</a>
+                </p>
+              </aside>
+            </div>
           </div>
 
           <!-- IS AUDIO -->
@@ -227,10 +233,12 @@ small, p a {
   font-size: 13px;
   text-decoration: underline;
 }
+/*
 p.fileName {
  font-size: 16px;
  color: white;
 }
+*/
 
 p.ellipsis-2-lines {text-align: center; max-width: 350px; margin: 5px auto}
 
@@ -274,7 +282,10 @@ aside .q-btn {
   .wrapperFile .videoContainer {
     flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
+  }
+
+  .videoContainer p.fileName {
+    margin-top: 16px;
   }
 
   p.ellipsis-2-lines {max-width: 248px;}
