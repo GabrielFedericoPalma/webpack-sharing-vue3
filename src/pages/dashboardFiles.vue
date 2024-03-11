@@ -61,7 +61,7 @@
                 <p class="q-mb-sm fileName" >{{item.fileName}}</p>
                 <p v-show="item.additionalNote" class="additionaNote" >{{item.additionalNote}}</p>
                 <p class="q-mt-none" >
-                  <a :href="item.link" :title="item.link" target="_blank" >Link</a>
+                  <a :href="item.link" :title="item.link" target="_blank" v-show="item.link" >Link</a>
                 </p>
               </aside>
             </div>

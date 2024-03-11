@@ -53,18 +53,22 @@ a {text-decoration: none; color: black}
 .wrapperFile div{margin:10px; display: inline-block; width: auto}
 .wrapperFile div div{display: inline-block;}
 .wrapperFile .file {width: 450px; height: 350px;}
-.wrapperFile .file .img {background-size:cover; background-position: center; width: 100%; height: 100%;}
+.wrapperFile .file .img {background-size:cover; background-position: center; width: 100%; height: 100%; margin: 0}
 
 .wrapperFile .videoContainer, .imgContainer {
   display: flex;
   background-color: #000000a6;
-  padding: 16px;
   width: 100%;
   max-width: 500px;
-  border-radius: 12px;
+  border-radius: 6px;
+  box-shadow: 0 0 9px #8f8f8f;
+}
+.videoContainer {
+  padding: 22px 16px;
 }
 .imgContainer {
-  background-color: #00000077;
+  // background-color: #00000077;
+  padding: 16px 8px;
 }
 .wrapperFile .videoContainer aside {
   max-width: 300px;
@@ -77,6 +81,9 @@ a {text-decoration: none; color: black}
 }
 .wrapperFile .videoContainer aside p.additionaNote {
   height: 200px;
+  background-color: black;
+  padding: 6px;
+  font-size: 15px;
 }
 .wrapperFile .videoContainer aside p {
   text-align: left;
@@ -87,8 +94,8 @@ a {text-decoration: none; color: black}
   width: auto;
   max-width: 180px;
   height: 300px;
-  border-radius: 12px;
-  border: 4px double black;
+  /*border-radius: 6px;
+  border: 1px solid white;*/
 }
 
 .pdfViewer {
