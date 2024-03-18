@@ -4,9 +4,10 @@
   <!-- **** HEADER **** -->
   <q-header elevated reveal
   :style="[store.conf_team.bgImage ? {backgroundImage:'url('+store.conf_team.bgImage+')'}:{}]"
-  style="z-index:9999" >
+  style="z-index:9999;" v-if="!$route.params.iframe" >
 
   <div class="q-py-md row justify-between items-center" style="background-color: rgba(0, 0, 0, 0.35);" >
+
     <q-toolbar style="width: 30px; z-index:1">
       <q-btn flat dense round icon="menu" aria-label="Menu" @click="drawer = !drawer" style="font-size: 19px" />
     </q-toolbar>
@@ -173,7 +174,7 @@
     },
     computed: {
       ...mapState(firebase_db_store, ['showSpinner','conf_team']),
-      ...mapState(login_store, ['userUI','isLogged'])
+      ...mapState(login_store, ['userUI','isLogged']),
     }
   }
   </script>

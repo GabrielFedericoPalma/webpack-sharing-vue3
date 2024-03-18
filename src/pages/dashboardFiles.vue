@@ -242,7 +242,9 @@ p.fileName {
 
 p.ellipsis-2-lines {text-align: center; max-width: 350px; margin: 5px auto}
 
-video, .img {border-radius: 10px;}
+video {border-radius: 10px;}
+.img {border-radius: 6px;}
+
 .blackShadow {background-color: #000000b5; border-bottom: 4px solid darkturquoise}
 .commonLinks {
   padding: 8px;
