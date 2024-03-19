@@ -2,7 +2,7 @@
 
  <q-card class="page" :style="{backgroundImage:'url('+store.conf_team.bgBodyImage+')'}" >
 
-      <div class="titleEdit bg-primary" >
+      <div class="titleEdit bg-primary" v-if="!$route.params.iframe" >
         <div class="cursor-pointer q-px-lg z-top" @click="goToFolders()"  v-if="login_store.isLogged" >
           <q-icon name="arrow_back" />
           <!-- <span>folders</span> -->
@@ -53,14 +53,14 @@
             <div class="videoContainer" >
               <!-- <p>{{ item.orden }}</p> -->
               <!-- <p>{{ item.id }}</p> -->
-              <video :poster="item.poster" controls preload="metadata" >
+              <video controls preload="metadata" >
                 <source :src="item.url" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <aside>
                 <p class="q-mb-sm fileName" >{{item.fileName}}</p>
-                <p v-show="item.additionalNote" class="additionaNote" >{{item.additionalNote}}</p>
-                <p class="q-mt-none" >
+                <p v-show="item.additionalNote" class="additionalNote" >{{item.additionalNote}}</p>
+                <p class="q-mt-none q-mb-none" >
                   <a :href="item.link" :title="item.link" target="_blank" v-show="item.link" >Link</a>
                 </p>
               </aside>
@@ -241,8 +241,6 @@ p.fileName {
 */
 
 p.ellipsis-2-lines {text-align: center; max-width: 350px; margin: 5px auto}
-
-video {border-radius: 10px;}
 
 .blackShadow {background-color: #000000b5; border-bottom: 4px solid #42b883}
 .commonLinks {

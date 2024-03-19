@@ -48,7 +48,7 @@ a {text-decoration: none; color: black}
 
 //DASHBOARD FILES
 .wrapperFile {text-align: center;}
-.wrapperFile h4 {text-align: left; margin: 0 0 10px 10px; font-size: 28px; text-shadow: 1px 2px 3px #2d2900}
+.wrapperFile h4 {text-align: left; margin: 0 0 10px 10px; font-size: 25px; text-shadow: 1px 2px 3px #2d2900}
 
 .wrapperFile div{margin:10px; display: inline-block; width: auto}
 .wrapperFile div div{display: inline-block;}
@@ -57,14 +57,14 @@ a {text-decoration: none; color: black}
 
 .wrapperFile .videoContainer, .imgContainer {
   display: flex;
-  background-color: #000000a6;
+  background-color: #1a1a1ae0;
   width: 100%;
-  max-width: 450px;
-  border-radius: 6px;
-  box-shadow: 0 0 9px #8f8f8f;
+  max-width: 430px;
+  // border-radius: 6px;
+  // box-shadow: 0 0 9px #8f8f8f;
 }
 .videoContainer {
-  padding: 22px 16px;
+  padding: 14px 10px;
 }
 .imgContainer {
   // background-color: #00000077;
@@ -79,16 +79,16 @@ a {text-decoration: none; color: black}
   color: #42b883;
   font-weight: 500;
 }
-.wrapperFile .videoContainer aside p.additionaNote {
-  height: 200px;
-  background-color: black;
-  padding: 6px;
-  font-size: 15px;
-}
 .wrapperFile .videoContainer aside p {
   text-align: left;
   font-size: 16px;
-  overflow: auto;
+}
+.wrapperFile .videoContainer .additionalNote {
+  height: 222px;
+  padding-right: 6px;
+  font-size: 15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .wrapperFile .videoContainer video{
   width: auto;
@@ -148,14 +148,14 @@ small.actions:last-child{margin-bottom:0}
 
 
 //****SCROLL STYLES****
-.destacados::-webkit-scrollbar, nav::-webkit-scrollbar, .q-card::-webkit-scrollbar, .indiceFixed::-webkit-scrollbar, body::-webkit-scrollbar {
+body::-webkit-scrollbar, p.additionalNote::-webkit-scrollbar {
   width: 6px;     /* Tamaño del scroll en vertical */
   height: 6px;    /* Tamaño del scroll en horizontal */
   // display: none;  /* Ocultar scroll */
 }
 
 /* Ponemos un color de fondo y redondeamos las esquinas del thumb */
-.destacados::-webkit-scrollbar-thumb, nav::-webkit-scrollbar-thumb, .indiceFixed::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb, p.additionalNote::-webkit-scrollbar-thumb {
   // background: #c9b2b2;
   background: #e2e1e2;
   border-radius: 4px;
@@ -165,17 +165,17 @@ small.actions:last-child{margin-bottom:0}
 }
 
 /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
-.destacados::-webkit-scrollbar-thumb:hover, nav::-webkit-scrollbar-thumb:hover, .indiceFixed::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover, .scroll::-webkit-scrollbar-thumb:hover, p.additionaNote::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover, .scroll::-webkit-scrollbar-thumb:hover, p.additionaNote::-webkit-scrollbar-thumb:hover {
   background: #f3f2f3;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
-.q-card::-webkit-scrollbar-thumb:hover, body::-webkit-scrollbar-thumb:hover, .scroll::-webkit-scrollbar-thumb:hover, p.additionaNote::-webkit-scrollbar-thumb:hover {
+body::-webkit-scrollbar-thumb:hover, .scroll::-webkit-scrollbar-thumb:hover, p.additionaNote::-webkit-scrollbar-thumb:hover {
   background: #f3f2f3;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 /* Cambiamos el fondo cuando esté en active */
-.destacados::-webkit-scrollbar-thumb:active, nav::-webkit-scrollbar-thumb:active, .indiceFixed::-webkit-scrollbar-thumb:active, body::-webkit-scrollbar-thumb:active, .scroll::-webkit-scrollbar-thumb:active, p.additionaNote::-webkit-scrollbar-thumb:active {
+body::-webkit-scrollbar-thumb:active, .scroll::-webkit-scrollbar-thumb:active, p.additionaNote::-webkit-scrollbar-thumb:active {
   // background-color: #c9b2b2;
   background: #e2e1e2;
 }
