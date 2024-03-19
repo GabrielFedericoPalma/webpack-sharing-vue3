@@ -53,7 +53,7 @@
             <div class="videoContainer" >
               <!-- <p>{{ item.orden }}</p> -->
               <!-- <p>{{ item.id }}</p> -->
-              <video controls preload="metadata" >
+              <video :poster="item.poster" controls preload="metadata" >
                 <source :src="item.url" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
