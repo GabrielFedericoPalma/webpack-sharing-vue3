@@ -33,6 +33,9 @@
                 </div>
                 <aside>
                   <p class="text-center q-mb-none text-bold fileName" >{{item.fileName}}</p>
+                  <p class="q-mb-none" v-show="item.tech" >
+                    <em>{{ item.tech }}</em>
+                  </p>
                   <p class="text-center ellipsis-2-lines" v-show="item.additionalNote" >{{item.additionalNote}}</p>
                   <p class="q-mt-none" v-show="item.link" >
                     <a :href="item.link" :title="item.link" target="_blank" >Link</a>
@@ -58,8 +61,11 @@
                 Your browser does not support the video tag.
               </video>
               <aside>
-                <p class="q-mb-sm fileName" >{{item.fileName}}</p>
-                <p v-show="item.additionalNote" class="additionalNote" >{{item.additionalNote}}</p>
+                <p class="q-mb-none fileName" >{{item.fileName}}</p>
+                <p class="q-mb-none" >
+                  <em>{{ item.tech }}</em>
+                </p>
+                <p v-show="item.additionalNote" class="additionalNote q-my-sm" >{{item.additionalNote}}</p>
                 <p class="q-mt-none q-mb-none" >
                   <a :href="item.link" :title="item.link" target="_blank" v-show="item.link" >Link</a>
                 </p>
@@ -223,15 +229,19 @@ export default {
 <style scoped >
 .page {background: #000000ce}
 
-h4, h5 {color: #fff}
+h4, h5 {color: #fff; letter-spacing: 1px;}
 h6 {font-size: 18px; font-weight: 500;}
 p, span {color: #fff}
 
-small, p a {
-  color: #42b883;
+p a {
+  color: #66beff;
   letter-spacing: 1px;
   font-size: 13px;
   text-decoration: underline;
+}
+p em {
+  font-size: 13px;
+  color: burlywood;
 }
 /*
 p.fileName {
@@ -294,7 +304,7 @@ aside .q-btn {
   }
 
   .wrapperFile div {
-    width: 90%;
+    width: 95%;
   }
 
 }

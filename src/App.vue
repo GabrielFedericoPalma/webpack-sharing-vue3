@@ -5,7 +5,7 @@
     <div class="spinnerWrapper" v-if="store.showSpinner" >
       <q-spinner-rings
         color="secondary"
-        size="3em"
+        size="3.5em"
       />
     </div>
     <!-- END SPINNER -->
