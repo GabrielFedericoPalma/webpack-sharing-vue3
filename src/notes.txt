@@ -3,24 +3,26 @@ PORTFOLIO
 
 CMS base tienda demo
 
-CMS base de tipo web app, desarrollado con Vue.js y Firebase con el objetivo de mantener una versión actualizada para el desarrollo de e-Commerce a medida.
-Spa/Pwa instalable en computadoras y celulares.
-CMS propio desarrollado a medida para facilitar la gestión de contenido fácil, con foco en UX.
-Backend serverless pensado para gran cantidad de productos.
-Desarrollo escalable para facilitar la incorporación de funcionalidades particulares de cada cliente.
+CMS desarrollado a medida para facilitar la gestión de contenido, con foco en UX. Backend serverless pensado para gran cantidad de productos. Desarrollo escalable para facilitar la incorporación de funcionalidades particulares de cada cliente. Vue.js / Firebase, una versión base que tiene por objetivo mantener una versión actualizada para el desarrollo de tiendas online a medida.
 
+Custom developed CMS to facilitate content management, with a focus on UX. Serverless backend designed for a large number of products. Scalable development to facilitate the incorporation of particular functionalities for each client. Vue.js / Firebase, a base version that aims to maintain an updated version for the development of custom online stores.
 
 My Link QR
 
-Herramienta para la creación de Carta QR online de forma automatizada.
-Creación de usuarios de forma pública con el objetivo de mantener una sóla aplicación y poder brindar la auto creación de cartas por parte de los usuarios.
-Carga de productos y configuración.
+Herramienta para la creación de Carta QR online de forma autónoma. Creación de usuarios de forma pública con el objetivo de mantener una sóla aplicación y poder brindar la auto creación de cartas por parte de los usuarios. Generador de QR. CRUD de productos y usuarios adicionales con roles. Importar / Exportar productos por archivo .xlsx.
+
+SaaS for creating digital QR menus for restaurnats. Creation of users publicly with the objective of maintaining a single application and being able to provide self-creation of qr menus by users. QR generator. CRUD of products and additional users with roles. Import/Export products by .xlsx file.
 
 Administrador de Clientes y Productos
-Web app de tipo SPA / PWA Serverless para el manejo de clientes, los productos comprados y seguimiento de sus cuotas. Desarrollado a medida para un cliente del rubro de comercio.
+Web app de tipo SPA / PWA Serverless para administrar clientes, ventas y seguimiento de cuotas. Desarrollado a medida para un cliente del rubro de comercio.
+
+SPA / PWA Serverless web app to manage clients, sales and quota tracking. Custom developed for a client in the commerce sector. It does not have a demo because it is a private app.
+
 
 I am sharing
 Web app para compartir archivos de forma pública y privada de acuerdo a perfiles, con el objetivo de, utilizar una misma web app personalizada de acuerdo a cada perfil.
+
+Web app to share files publicly and privately according to profiles, with the aim of using the same web app and being able to share files in a personalized way.
 
 
 
