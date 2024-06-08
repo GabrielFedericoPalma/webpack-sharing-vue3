@@ -190,7 +190,7 @@
   src: url(../assets/fonts/GreatVibes-Regular.ttf);
 }
 
-.mainText {margin: auto; width: fit-content;}
+.mainText {margin: auto; width: fit-content; backdrop-filter: blur(2px);}
 h1, h2 {background: #0920319e; width: fit-content; padding: 8px 12px; margin: auto; border-radius: 8px}
 h1{font-family: 'GreatVibes', Arial;font-size:33px; line-height:1; letter-spacing: 2px; text-align: center; text-shadow: 1px 2px 6px black}
 h2{font-size:12px; letter-spacing: 2px; line-height: 1; text-align: center; text-shadow: 1px 2px 6px black}

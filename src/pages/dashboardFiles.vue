@@ -243,26 +243,13 @@ p em {
   font-size: 13px;
   color: burlywood;
 }
-/*
-p.fileName {
- font-size: 16px;
- color: white;
-}
-*/
 
 p.ellipsis-2-lines {text-align: center; max-width: 350px; margin: 5px auto}
 
-.blackShadow {background-color: #000000b5; border-bottom: 4px solid #42b883}
+.blackShadow {background-color: #000000b5; border-bottom: 4px solid #42b883; backdrop-filter: blur(2px);}
+
 .commonLinks {
   padding: 8px;
-  /*
-  background-color: #000000bf;
-  padding: 10px 4px;
-  width: 90%;
-  margin:auto;
-  border: 2px solid aqua;
-  border-radius:12px;
-  */
 }
 .audioContainer {
   width: 350px;

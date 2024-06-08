@@ -52,7 +52,7 @@ a {text-decoration: none; color: black}
 
 .wrapperFile div{margin:10px; display: inline-block; width: auto}
 .wrapperFile div div{display: inline-block;}
-.wrapperFile .file {width: 400px; height: 300px;}
+.wrapperFile .file {width: 400px; height: 300px; position: relative}
 .wrapperFile .file .img {background-size:cover; background-position: center; width: 100%; height: 100%; margin: 0}
 
 .wrapperFile .videoContainer, .imgContainer {
@@ -95,6 +95,7 @@ a {text-decoration: none; color: black}
   max-width: 172px;
   height: 296px;
   align-self: center;
+  position: relative;
   /*border-radius: 6px;
   border: 1px solid white;*/
 }
@@ -105,6 +106,19 @@ a {text-decoration: none; color: black}
 }
 
 div.text {min-height: 60px}
+
+// Image gradient
+.wrapperFile .file .img::after, .wrapperFile .videoContainer video::after{
+  content: "";
+  width: 100%;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to top, #1a1a1ae0, transparent);
+}
+// End Image gradient
+
 
 @media screen and (max-width: 500px) {
   .wrapperFile .file {width: 370px; height: 320px;}
