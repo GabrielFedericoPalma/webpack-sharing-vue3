@@ -2,7 +2,7 @@
 
  <q-card class="page" :style="{backgroundImage:'url('+store.conf_team.bgBodyImage+')'}" >
 
-      <div class="titleEdit bg-primary" v-if="!$route.params.iframe" >
+      <div class="titleEdit bg-primary" >
         <div class="cursor-pointer q-px-lg z-top" @click="goToFolders()"  v-if="login_store.isLogged" >
           <q-icon name="arrow_back" />
           <!-- <span>folders</span> -->
@@ -65,7 +65,8 @@
                 <p class="q-mb-none" >
                   <em>{{ item.tech }}</em>
                 </p>
-                <p v-show="item.additionalNote" class="additionalNote q-my-sm" >{{item.additionalNote}}</p>
+                <p v-if="!$route.params.lang"  class="additionalNote q-my-sm" >{{item.additionalNote}}</p>
+                <p v-else class="additionalNote q-my-sm" >{{item.additionalNoteES}}</p>
                 <p class="q-mt-none q-mb-none" >
                   <a :href="item.link" :title="item.link" target="_blank" v-show="item.link" >Link</a>
                 </p>
