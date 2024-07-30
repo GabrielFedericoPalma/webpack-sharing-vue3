@@ -1,8 +1,8 @@
 {
   "name": "sharing",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "Sharing files under profiles",
-  "productName": "I am Sharing",
+  "productName": "I am Sharing - GPalmadev",
   "author": "gpalmadev.web.app",
   "private": true,
   "scripts": {

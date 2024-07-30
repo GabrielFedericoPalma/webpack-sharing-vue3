@@ -235,14 +235,14 @@ h6 {font-size: 18px; font-weight: 500;}
 p, span {color: #fff}
 
 p a {
-  color: #66beff;
+  color: crimson;
   letter-spacing: 1px;
   font-size: 13px;
   text-decoration: underline;
 }
 p em {
   font-size: 13px;
-  color: burlywood;
+  color: aqua;
 }
 
 p.ellipsis-2-lines {text-align: center; max-width: 350px; margin: 5px auto}
