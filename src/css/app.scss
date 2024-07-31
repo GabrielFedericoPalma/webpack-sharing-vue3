@@ -48,7 +48,7 @@ a {text-decoration: none; color: black}
 
 //DASHBOARD FILES
 .wrapperFile {text-align: center;}
-.wrapperFile h4 {text-align: left; margin: 0 0 10px 10px; font-size: 24px; text-shadow: 1px 2px 3px #2d2900}
+.wrapperFile h4 {text-align: left; font-family: monospace, arial; margin: 0 0 10px 10px; font-size: 24px; text-shadow: 1px 2px 3px #2d2900}
 
 .wrapperFile div{margin:10px; display: inline-block; width: auto}
 .wrapperFile div div{display: inline-block;}
@@ -60,8 +60,7 @@ a {text-decoration: none; color: black}
   background-color: #1a1a1ae0;
   width: 100%;
   max-width: 430px;
-  // border-radius: 6px;
-  // box-shadow: 0 0 9px #8f8f8f;
+  min-width: 330px;
 }
 .videoContainer {
   padding: 14px;
