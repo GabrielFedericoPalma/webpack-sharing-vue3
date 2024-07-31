@@ -235,10 +235,20 @@ h6 {font-size: 18px; font-weight: 500;}
 p, span {color: #fff}
 
 p a {
-  color: crimson;
+  color: aqua;
   letter-spacing: 1px;
   font-size: 13px;
-  text-decoration: underline;
+  text-decoration: none;
+  outline-style: outset;
+  outline-width: 2px;
+  outline-color: aliceblue;
+  border-radius: 14px;
+  padding: 3px 4px;
+  text-align: center;
+  display: block;
+  width: 50px;
+  margin: auto;
+  margin-top: 16px;
 }
 p em {
   font-size: 13px;

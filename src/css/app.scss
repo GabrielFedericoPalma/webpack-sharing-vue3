@@ -64,7 +64,7 @@ a {text-decoration: none; color: black}
   // box-shadow: 0 0 9px #8f8f8f;
 }
 .videoContainer {
-  padding: 14px 10px;
+  padding: 14px;
 }
 .imgContainer {
   // background-color: #00000077;
@@ -76,7 +76,7 @@ a {text-decoration: none; color: black}
 }
 .wrapperFile .videoContainer aside p.fileName, .imgContainer p.fileName{
   font-size: 18px;
-  color: #ffff82;
+  color: #eeee78;
   font-weight: 500;
 }
 .wrapperFile .videoContainer aside p {
@@ -84,7 +84,7 @@ a {text-decoration: none; color: black}
   font-size: 16px;
 }
 .wrapperFile .videoContainer .additionalNote {
-  height: 222px;
+  height: 182px;
   padding-right: 6px;
   font-size: 15px;
   overflow-y: scroll;
@@ -94,10 +94,7 @@ a {text-decoration: none; color: black}
   width: auto;
   max-width: 172px;
   height: 296px;
-  align-self: center;
   position: relative;
-  /*border-radius: 6px;
-  border: 1px solid white;*/
 }
 
 .pdfViewer {
